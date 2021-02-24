@@ -36,6 +36,34 @@ li {
 }
 
 
+/*Login/Sign Up Modal*/
+
+.loginSignup {
+    display: none;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    float: top;
+    padding-top: 10px;
+    background-color: white;
+    border: solid;
+}
+
+#loginEmail,
+#loginPassword {
+    height: 30px;
+    width: 180px;
+}
+
+#signup {
+    margin-top: 10px;
+    text-align: right;
+}
+
+
 /*Advertisement*/
 
 .newAdvertisement {
@@ -51,7 +79,7 @@ li {
     justify-content: center;
     align-items: center;
     border: solid;
-    min-width: 1060px;
+    width: 1060px;
     min-height: 40vh;
 }
 
