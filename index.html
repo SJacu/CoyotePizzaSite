@@ -5,6 +5,7 @@
     <title>Slice of Blue</title>
     <link rel="stylesheet" href="style.css">
 
+    <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
@@ -30,7 +31,8 @@
         const db = firebase.firestore();   //used to initialize our database object we'll be refering to
         const auth = firebase.auth(); //initializes our authorization sdk
     </script>
-
+    <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
+    
     <script src="script.js" defer></script>
 </head>
 
@@ -42,7 +44,8 @@
             <li id="specials">SPECIALS</li>
             <li id="rewards">REWARDS</li>
             <li id="startYourOrder">START YOUR ORDER</li>
-            <li id="login">LOGIN</li>
+            <li id="logout", class="rightSide">LOGOUT</li>
+            <li id="login", class="rightInner">LOGIN</li>
         </ul>
 
         <!--Login/Sign Up Modal-->
