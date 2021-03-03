@@ -9,7 +9,9 @@ a {
     cursor: pointer;
 }
 
+
 /*Navbar*/
+
 .navbar {
     background-color: rgb(0, 114, 198);
     position: fixed;
@@ -33,21 +35,23 @@ li {
     margin-left: 20px;
 }
 
-.rightInner{
+.rightInner {
     margin-right: 40px;
 }
 
-.rightSide{
+.rightSide {
     margin-left: auto;
     margin-right: 40px;
 }
 
+
 /*Login/Sign Up Modal*/
+
 .loginSignup {
     display: none;
     flex-direction: column;
     width: 200px;
-    height: 120px;
+    height: 140px;
     align-items: center;
     position: absolute;
     right: 0px;
@@ -65,7 +69,30 @@ li {
 
 #signup {
     margin-top: 10px;
-    text-align: right;
+    padding-left: 20px;
+}
+
+.signuplink:hover {
+    font-size: large;
+}
+
+.signuplink:visited {
+    color: black;
+}
+
+#loginmodal {
+    text-decoration: none;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+#loginmodal:hover {
+    font-size: large;
+}
+
+#loginmodal,
+#signup {
+    display: inline;
 }
 
 
@@ -195,7 +222,7 @@ li {
     text-align: left;
     justify-content: center;
     margin-left: 150px;
-	margin-right: 50px;
+    margin-right: 50px;
 }
 
 
