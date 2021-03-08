@@ -38,11 +38,23 @@ li {
 .navlink:hover,
 #login:hover,
 #logout:hover {
-    font-size: large;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(0, 217, 255);
 }
 
 #menu {
-    margin-left: 20px;
+    margin-left: -20px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    padding: 0;
+    margin-top: 60px;
+    border-radius: 50%;
 }
 
 .rightInner {
@@ -84,7 +96,8 @@ li {
 }
 
 .signuplink:hover {
-    font-size: large;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(0, 114, 198);
 }
 
 .signuplink:visited {
@@ -98,7 +111,8 @@ li {
 }
 
 #loginmodal:hover {
-    font-size: large;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(0, 114, 198);
 }
 
 #loginmodal,
@@ -132,7 +146,7 @@ li {
 .menuHeaders {
     background-color: rgb(0, 114, 198);
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: wrap;
     min-height: 50vh;
     text-align: center;
     justify-content: center;
@@ -269,5 +283,6 @@ li {
 
 #createAccount:hover,
 #signupinfoLogin:hover {
-    font-size: large;
+    text-shadow: 2px 2px 4px rgb(0, 114, 198);
+    font-weight: bold;
 }
