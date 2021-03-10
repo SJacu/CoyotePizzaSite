@@ -1,4 +1,4 @@
-// login-script.js
+// sign-up-script.js
 // https://www.youtube.com/watch?v=4d-gIPGzmK4&list=PL4cUxeGkcC9itfjle0ji1xOZ2cjRGY_WB&ab_channel=TheNetNinja
 // https://www.youtube.com/watch?v=aN1LnNq4z54&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&ab_channel=TheNetNinja            
 
@@ -51,7 +51,7 @@ function Sign_Up()
                 signUpEmailInput.value = "";
                 signUpPasswordInput.value = "";
                 signUpPasswordInput2.value = "";
-                window.location.href = "index.html";
+                window.location.href = "../index.html";
                 alert("Signed up Succesffuly");
             });
         }
@@ -76,20 +76,6 @@ signUpButton.addEventListener("click", (e) =>
     Sign_Up();
 });
 
-
-//function will use firebase auth to log the user out
-function Log_Out()
-{
-    auth.signOut();
-}
-
-//attaches logout function to logout button on page
-logout.addEventListener("click", (e) =>
-{
-    e.preventDefault();
-    Log_Out();
-});
-
 //function to log in user
 function Log_In()
 {
@@ -106,7 +92,7 @@ function Log_In()
             //clears information forms
             LoginEmail.value = "";
             LoginPassword.value = "";
-            window.location.href = "index.html";
+            window.location.href = "../index.html";
             alert("Logged In Successfully");
         });
     }else{
