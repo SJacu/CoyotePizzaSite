@@ -30,6 +30,7 @@ auth.onAuthStateChanged(user => {
         //user is logged out
         console.log("There is no user logged in");
         UserDisplay.textContent = "";
+        NavLogout.style.display = "none";
     }
 });
 
@@ -64,6 +65,7 @@ function Log_In()
             LoginPassword.value = "";
             alert("Logged In Successfully");
             hideLoginSignup();
+            window.location.href = "index.html";
         });
     }else{
         //if one of the forms are empty

@@ -1,0 +1,29 @@
+/*Sign Up Form*/
+#signupinfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+
+#userName,
+#signupReenterPassword,
+#signupEmail,
+#signupPassword {
+    height: 50px;
+    width: 600px;
+}
+
+#createAccount {
+    padding-left: 245px;
+}
+
+#signupinfoLogin {
+    padding-left: 280px;
+}
+
+#createAccount:hover,
+#signupinfoLogin:hover {
+    text-shadow: 2px 2px 4px rgb(0, 114, 198);
+    font-weight: bold;
+}

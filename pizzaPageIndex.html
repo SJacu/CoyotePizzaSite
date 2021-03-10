@@ -1,178 +1,217 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Slice of Blue Menu</title>
+        <link href="pizzaPageStyle.css" rel="stylesheet">
+        <link rel="stylesheet" href="navstyle.css">
+    
+        <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-<head>
-    <title>Slice of Blue </title>
-    <link href="pizzaPageStyle.css" rel="stylesheet">
-</head>
+        <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+        <!-- needed to use firebase firestore -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <!-- needed to use firebase authentication -->
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
+                authDomain: "sliceofblue-d8622.firebaseapp.com",
+                projectId: "sliceofblue-d8622",
+                storageBucket: "sliceofblue-d8622.appspot.com",
+                messagingSenderId: "924075037117",
+                appId: "1:924075037117:web:890ec08ecd299d459182d4",
+                measurementId: "G-LCBLS25DNQ"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            const db = firebase.firestore(); //used to initialize our database object we'll be refering to
+            const auth = firebase.auth(); //initializes our authorization sdk
+        </script>
+        <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
 
-<body>
-    <!--NAVBAR-->
-    <nav class="navbar">
-        <ul>
-            <li>MENU</li>
-            <li>SPECIALS</li>
-            <li>REWARDS</li>
-            <li>START YOUR ORDER</li>
-            <li>LOGIN</li>
-        </ul>
+        <script src="script.js" defer></script>
+        <script src="login-script.js" defer></script>
+    </head>
 
-         <!--Login/Sign Up Modal-->
-         <div class="loginSignup">
+    <body>
+        <!--NAVBAR-->
+        <nav class="navbar">
+            <ul>
+                <li id="logo">
+                    <a class="navlink" href="index.html"><img src="images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
+                </li>
+                <li id="menu"><a class="navlink" href="pizzaPageIndex.html">MENU</a></li>
+                <li id="specials"><a class="navlink">SPECIALS</a></li>
+                <li id="rewards"><a class="navlink">REWARDS</a></li>
+                <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
+                <li id="welcome"><a class="navlink"></a></li>
+                <li id="logout" class="rightSide">LOGOUT</li>
+                <li id="login" class="rightSide"><a>LOGIN</a></li>
+            </ul>
+
+            <!--Login/Sign Up Modal-->
+            <div class="loginSignup">
             <input type="email" id="loginEmail" placeholder="EMAIL"> <br>
-            <input type="password" id="loginPassword" placeholder="PASSWORD">
-            <div id="signup">Sign Up</div>
-        </div>
-    </nav>
+            <input type="password" id="loginPassword" placeholder="PASSWORD"><br>
+            <div class="loginSignupButtons">
+                <div id="loginmodal">Login</div>
+                <div id="signup"><a class="signuplink" href="signup/signup.html">Sign Up</a></div>
+            </div>
+        </nav>
 
-    <!--Menu NAVBAR-->
-    <nav class="menuHeaders">
-        <ul id="menuNavbar">
-            <li>PIZZA</li>
-            <li>SIDES</li>
-            <li>DESSERTS</li>
-            <li>DRINKS</li>
-        </ul>
-    </nav>
+        <!--Menu NAVBAR-->
+        <nav class="menuHeaders">
+            <ul id="menuNavbar">
+                <li>PIZZA</li>
+                <li>SIDES</li>
+                <li>DESSERTS</li>
+                <li>DRINKS</li>
+            </ul>
+        </nav>
 
-    <!--Menu Boxes-->
-    <div class="quicklinks">
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+        <!--Menu Boxes-->
+        <div class="quicklinks">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div class="content">
+                    <div class="table">
+                        <div class="table-cell">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="square">
-            <div class="content">
-                <div class="table">
-                    <div class="table-cell">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <!--General Information-->
-    <div class="generalInfo">
-        <!--Our Company Section-->
-        <div class="ourCompanySection">
-            <div id="ourCompany">OUR COMPANY</div>
-            <div id="about">About</div>
-            <div id="contactless">Contactless Delivery</div>
+        <!--General Information-->
+        <div class="generalInfo">
+            <!--Our Company Section-->
+            <div class="ourCompanySection">
+                <div id="ourCompany">OUR COMPANY</div>
+                <div id="about">About</div>
+                <div id="contactless">Contactless Delivery</div>
+            </div>
+            <!--Our Pizza Section-->
+            <div class="ourPizzaSection">
+                <div id="ourPizza">OUR PIZZA</div>
+                <div id="pizzaMenu">Pizza Menu</div>
+                <div id="nutritionInfo">Nutrition Info</div>
+                <div id="allergen">Allergen Info</div>
+            </div>
+            <!--Help Section-->
+            <div class="helpSection">
+                <div id="help">HELP</div>
+                <div id="contactUs">Contact Us</div>
+                <div id="faq">FAQ</div>
+            </div>
         </div>
-        <!--Our Pizza Section-->
-        <div class="ourPizzaSection">
-            <div id="ourPizza">OUR PIZZA</div>
-            <div id="pizzaMenu">Pizza Menu</div>
-            <div id="nutritionInfo">Nutrition Info</div>
-            <div id="allergen">Allergen Info</div>
+        <!--Slice of Blue Description-->
+        <div class="description">
+            Offers good for a limited time at "Slice of Blue" located at California State University, San
+            Bernardino!
+            Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks
+            are
+            registered Trademarks of PepsiCo, Inc. Some offers require the purchase of multiple pizzas. Some
+            offers
+            may be available online only. Certain toppings may be excluded from special offer pizzas or
+            require
+            additional charge. Limited delivery area. Delivery fee may apply and may not be subject to
+            discount.
+            Customer responsible for all applicable taxes. </div>
         </div>
-        <!--Help Section-->
-        <div class="helpSection">
-            <div id="help">HELP</div>
-            <div id="contactUs">Contact Us</div>
-            <div id="faq">FAQ</div>
-        </div>
-    </div>
-    <!--Slice of Blue Description-->
-    <div class="description">
-        Offers good for a limited time at "Slice of Blue" located at California State University, San
-        Bernardino!
-        Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks
-        are
-        registered Trademarks of PepsiCo, Inc. Some offers require the purchase of multiple pizzas. Some
-        offers
-        may be available online only. Certain toppings may be excluded from special offer pizzas or
-        require
-        additional charge. Limited delivery area. Delivery fee may apply and may not be subject to
-        discount.
-        Customer responsible for all applicable taxes. </div>
-    </div>
-</body>
-
+    </body>
 </html>

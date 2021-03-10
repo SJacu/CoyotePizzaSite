@@ -3,6 +3,7 @@
     <head>
         <title>Slice of Blue</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="navstyle.css">
 
         <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -38,29 +39,29 @@
         <script src="login-script.js" defer></script>
     </head>
 
-<body>
-    <!--NAVBAR-->
-    <nav class="navbar">
-        <ul>
-            <li id="logo">
-                <a class="navlink" href="index.html"><img src="Slice of Blue Logo.png" heigth="150px" width="150px"></a>
-            </li>
-            <li id="menu"><a class="navlink">MENU</a></li>
-            <li id="specials"><a class="navlink">SPECIALS</a></li>
-            <li id="rewards"><a class="navlink">REWARDS</a></li>
-            <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
-            <li id="welcome"><a class="navlink">Welcome, User</a></li>
-            <li id="logout" , class="rightSide">LOGOUT</li>
-            <li id="login" , class="rightInner"><a>LOGIN</a></li>
-        </ul>
+    <body>
+        <!--NAVBAR-->
+        <nav class="navbar">
+            <ul>
+                <li id="logo">
+                    <a class="navlink" href="index.html"><img src="images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
+                </li>
+                <li id="menu"><a class="navlink" href="pizzaPageIndex.html">MENU</a></li>
+                <li id="specials"><a class="navlink">SPECIALS</a></li>
+                <li id="rewards"><a class="navlink">REWARDS</a></li>
+                <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
+                <li id="welcome"><a class="navlink"></a></li>
+                <li id="logout" class="rightSide">LOGOUT</li>
+                <li id="login" class="rightSide"><a>LOGIN</a></li>
+            </ul>
 
-        <!--Login/Sign Up Modal-->
-        <div class="loginSignup">
+            <!--Login/Sign Up Modal-->
+            <div class="loginSignup">
             <input type="email" id="loginEmail" placeholder="EMAIL"> <br>
             <input type="password" id="loginPassword" placeholder="PASSWORD"><br>
             <div class="loginSignupButtons">
                 <div id="loginmodal">Login</div>
-                <div id="signup"><a class="signuplink" href="signup.html">Sign Up</a></div>
+                <div id="signup"><a class="signuplink" href="signup/signup.html">Sign Up</a></div>
             </div>
         </nav>
 

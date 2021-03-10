@@ -1,0 +1,114 @@
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*Navbar*/
+.navbar {
+    background-color: rgb(0, 114, 198);
+    position: fixed;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    height: 10vh;
+    align-items: center;
+    flex-direction: row;
+}
+
+li {
+    padding-left: 30px;
+    color: white;
+}
+
+.navlink:visited {
+    color: white;
+}
+
+.navlink:hover,
+#login:hover,
+#logout:hover {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(0, 217, 255);
+}
+
+#menu {
+    margin-left: -20px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    padding: 0;
+    margin-top: 60px;
+    border-radius: 50%;
+}
+
+.rightInner {
+    margin-right: 40px;
+}
+
+.rightSide {
+    margin-left: auto;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+
+/*Login/Sign Up Modal*/
+
+.loginSignup {
+    display: none;
+    flex-direction: column;
+    width: 200px;
+    height: 140px;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    float: top;
+    padding-top: 10px;
+    background-color: white;
+    border: solid;
+}
+
+#loginEmail,
+#loginPassword {
+    height: 30px;
+    width: 180px;
+}
+
+#signup {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.signuplink:hover {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(0, 114, 198);
+}
+
+.signuplink:visited {
+    color: black;
+}
+
+#loginmodal {
+    text-decoration: none;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+#loginmodal:hover {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(0, 114, 198);
+}
+
+#loginmodal,
+#signup {
+    display: inline;
+}
