@@ -4,81 +4,9 @@
     font-family: sans-serif;
 }
 
-<<<<<<< Updated upstream
-
-/*Navbar*/
-.navbar {
-    background-color: rgb(0, 114, 198);
-    position: fixed;
-    width: 100%;
-}
-
-ul {
-    display: flex;
-    list-style-type: none;
-    height: 10vh;
-    align-items: center;
-    flex-direction: row;
-}
-
-li {
-    padding-left: 30px;
-    color: white;
-}
-
-#menu {
-    margin-left: 20px;
-}
-
-.rightInner{
-    margin-right: 40px;
-}
-
-.rightSide{
-    margin-left: auto;
-    margin-right: 40px;
-}
-
-/*Login/Sign Up Modal*/
-.loginSignup {
-    display: none;
-    flex-direction: column;
-    width: 200px;
-    height: 120px;
-    align-items: center;
-    position: absolute;
-    right: 0px;
-    float: top;
-    padding-top: 10px;
-    background-color: white;
-    border: solid;
-}
-
-#loginEmail,
-#loginPassword {
-    height: 30px;
-    width: 180px;
-}
-
-#signup {
-    margin-top: 10px;
-    text-align: right;
-}
-
-
-/*Advertisement*/
-
-.newAdvertisement {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    padding-top: 60px;
-=======
 a {
     text-decoration: none;
     cursor: pointer;
->>>>>>> Stashed changes
 }
 
 .input {
@@ -91,16 +19,6 @@ a {
 
 .background-color-coyoteblue {
     background-color: rgb(0, 114, 198);
-<<<<<<< Updated upstream
-    display: flex;
-    flex-flow: row wrap;
-    min-height: 50vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-=======
->>>>>>> Stashed changes
 }
 
 .background-color-white {
@@ -156,29 +74,10 @@ a {
 
 .flex-direction-row {
     flex-direction: row;
-<<<<<<< Updated upstream
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
-=======
->>>>>>> Stashed changes
 }
 
 .flex-direction-column {
     flex-direction: column;
-<<<<<<< Updated upstream
-    background-color: white;
-    width: 250px;
-    min-height: 15vh;
-    text-align: left;
-    justify-content: center;
-    margin-left: 150px;
-}
-
-.helpSection {
-    margin-right: 50px;
-=======
->>>>>>> Stashed changes
 }
 
 .flex-direction-space-evenly {
