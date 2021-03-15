@@ -7,12 +7,36 @@
 
 /*Navbar*/
 
-
+/*Navbar*/
 .navbar {
     background-color: rgb(0, 114, 198);
     position: fixed;
     width: 100%;
-    padding-left: 125px;
+    z-index: 950;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    height: 10vh;
+    align-items: center;
+    flex-direction: row;
+}
+
+li {
+    padding-left: 30px;
+    color: white;
+}
+
+.navlink:visited {
+    color: white;
+}
+
+.navlink:hover,
+#login:hover,
+#logout:hover {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(0, 217, 255);
 }
 
 #menuNavbar {
@@ -70,12 +94,14 @@ li {
 
 
 /*Menu Item Headers*/
-.menuHeaders {
+.menuNav {
     background-color: rgb(0, 114, 198);
     position: fixed;
-    width: 100%;
+    width: 30%;
     top: 70px;
     margin-left: right;
+    z-index: 900;
+    border-bottom-right-radius: 3cm;
 }
 
 ul {
