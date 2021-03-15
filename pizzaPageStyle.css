@@ -1,0 +1,24 @@
+    /*Menu Item Headers*/
+    
+    #menuHeaders {
+        padding: 20px 0px 0px 110px;
+        top: 60px;
+        z-index: 1;
+        height: 8vh;
+    }
+    
+    .navbar {
+        border-bottom: solid black;
+    }
+    /*Quicklinks*/
+    
+    .quicklinks {
+        padding-top: 20vh;
+        background-color: white;
+    }
+    
+    .boxes {
+        margin: 50px auto 50px auto;
+        height: 200px;
+        min-width: 250px;
+    }

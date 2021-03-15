@@ -4,6 +4,7 @@
     font-family: sans-serif;
 }
 
+<<<<<<< Updated upstream
 
 /*Navbar*/
 .navbar {
@@ -73,22 +74,24 @@ li {
     align-items: center;
     height: 70vh;
     padding-top: 60px;
+=======
+a {
+    text-decoration: none;
+    cursor: pointer;
+>>>>>>> Stashed changes
 }
 
-#advertisement {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid;
-    width: 1060px;
-    min-height: 40vh;
+.input {
+    width: 700px;
+    min-height: 6vh;
 }
 
 
-/*Menu Item Headers*/
+/*General CSS Classes*/
 
-.menuHeaders {
+.background-color-coyoteblue {
     background-color: rgb(0, 114, 198);
+<<<<<<< Updated upstream
     display: flex;
     flex-flow: row wrap;
     min-height: 50vh;
@@ -96,91 +99,74 @@ li {
     justify-content: center;
     align-items: center;
     padding: 20px;
+=======
+>>>>>>> Stashed changes
 }
 
-#pizza,
-#sides,
-#desserts,
-#drinks {
-    display: flex;
+.background-color-white {
     background-color: white;
-    border-style: solid;
-    min-width: 500px;
-    min-height: 20vh;
-    margin: 20px;
-    justify-content: center;
-    align-items: center;
 }
 
-
-/*Quicklinks*/
-
-.quicklinks {
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    min-height: 50vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.hover-color-lightblue:hover,
+.navlink:hover {
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgb(0, 217, 255);
 }
 
-#contactlessDelivery,
-#becomePart,
-#startOrder {
-    background-color: white;
-    display: flex;
-    border-style: solid;
-    width: 300px;
-    min-height: 40vh;
-    margin: 20px;
-    justify-content: center;
-    align-items: center;
+.hover-color-coyoteblue:hover {
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgb(0, 114, 198)
 }
 
-
-/*Join Newsletter*/
-
-.joinNewsletter {
-    background-color: rgb(0, 114, 198);
-    display: flex;
-    flex-direction: column;
-    min-height: 15vh;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 10px;
-}
-
-#newsletterText {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.visited-color-white:visited,
+.navlink:visited {
     color: white;
 }
 
-#newsletterEmail {
-    width: 700px;
-    min-height: 5vh;
+.visited-color-black:visited {
+    color: black;
 }
 
+.color-white,
+.navlink {
+    color: white;
+}
 
-/*General Information*/
+.color-black {
+    color: black;
+}
 
-.generalInfo {
-    background-color: white;
+.basic-div {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-solid {
+    border: solid;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px grey;
+}
+
+.left-aligned-div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.flex-direction-row {
     flex-direction: row;
+<<<<<<< Updated upstream
     justify-content: center;
     align-items: center;
     padding-top: 30px;
+=======
+>>>>>>> Stashed changes
 }
 
-.ourCompanySection,
-.ourPizzaSection,
-.helpSection {
-    display: flex;
+.flex-direction-column {
     flex-direction: column;
+<<<<<<< Updated upstream
     background-color: white;
     width: 250px;
     min-height: 15vh;
@@ -191,11 +177,10 @@ li {
 
 .helpSection {
     margin-right: 50px;
+=======
+>>>>>>> Stashed changes
 }
 
-
-/*Slice of Blue Description*/
-
-.description {
-    padding: 60px;
+.flex-direction-space-evenly {
+    flex-direction: space-evenly;
 }
