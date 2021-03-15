@@ -10,8 +10,21 @@
     .navbar {
         border-bottom: solid black;
     }
+
+    /*Menu Item Headers*/
+    .menuNav {
+        border-bottom: solid black;
+        position: fixed;
+        width: 30%;
+        top: 90px;
+        height: 40px;
+        margin-left: right;
+        z-index: 1;
+        border-bottom-right-radius: 3cm;
+        align-items: center;
+    }
+
     /*Quicklinks*/
-    
     .quicklinks {
         padding-top: 20vh;
         background-color: white;
