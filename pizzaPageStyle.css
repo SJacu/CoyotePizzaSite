@@ -4,41 +4,6 @@
     font-family: sans-serif;
 }
 
-
-/*Navbar*/
-
-/*Navbar*/
-.navbar {
-    background-color: rgb(0, 114, 198);
-    position: fixed;
-    width: 100%;
-    z-index: 950;
-}
-
-ul {
-    display: flex;
-    list-style-type: none;
-    height: 10vh;
-    align-items: center;
-    flex-direction: row;
-}
-
-li {
-    padding-left: 30px;
-    color: white;
-}
-
-.navlink:visited {
-    color: white;
-}
-
-.navlink:hover,
-#login:hover,
-#logout:hover {
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgb(0, 217, 255);
-}
-
 #menuNavbar {
     display: flex;
     list-style-type: none;
@@ -49,82 +14,21 @@ li {
     color: white;
 }
 
-/*
-li {
-    padding-left: 30px;
-    color: white;
-}
-*/
-#menu {
-    margin-left: 20px;
-}
-
-#login {
-    margin-left: auto;
-    margin-right: 40px;
-}
-
-
-/*Login/Sign Up Modal*/
-
-.loginSignup {
-    display: none;
-    flex-direction: column;
-    width: 200px;
-    height: 120px;
-    align-items: center;
-    position: absolute;
-    right: 0px;
-    float: top;
-    padding-top: 10px;
-    background-color: white;
-    border: solid;
-}
-
-#loginEmail,
-#loginPassword {
-    height: 30px;
-    width: 180px;
-}
-
-#signup {
-    margin-top: 10px;
-    text-align: right;
-}
-
-
 /*Menu Item Headers*/
 .menuNav {
     background-color: rgb(0, 114, 198);
     position: fixed;
     width: 30%;
-    top: 70px;
+    top: 90px;
+    height: 50px;
     margin-left: right;
-    z-index: 900;
+    z-index: 1;
     border-bottom-right-radius: 3cm;
-}
-
-ul {
     display: flex;
-    list-style-type: none;
-    height: 10vh;
     align-items: center;
-    flex-direction: row;
 }
 
-li {
-    padding-left: 30px;
-    color: rgb(255, 255, 255);
-    
-}
-
-
-/*Quicklinks*/
-
-.quicklinks {
-    background-color: white;
-}
-
+/* Menu Page Squares */
 .square {
     float: left;
     position: relative;
@@ -148,60 +52,12 @@ li {
     width: 100%;  
 }
 
+/* This is the actual div containing menu item info */
 .table-cell {
     display: table-cell;
     vertical-align: middle;
     height: 100%;
     width: 100%;
     border-style: solid;
-}
-
-.menuItem {
-    background-color: white;
-    display: flex;
-    border-style: solid;
-    width: 250px;
-    min-height: 35vh;
-    margin-left: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/*General Information*/
-
-.generalInfo {
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
-    padding-left: 230px;
-    margin-left: -230px;
-}
-
-.ourCompanySection,
-.ourPizzaSection,
-.helpSection {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 250px;
-    min-height: 15vh;
-    text-align: left;
-    justify-content: center;
-    margin-left: 150px;
-  
-}
-
-.helpSection {
-    margin-right: 50px;
-}
-
-
-/*Slice of Blue Description*/
-
-.description {
-    padding: 60px;
+    text-align: center;
 }
