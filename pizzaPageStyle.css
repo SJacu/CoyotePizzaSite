@@ -1,63 +1,37 @@
-* {
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-}
+    /*Menu Item Headers*/
+    
+    #menuHeaders {
+        padding: 20px 0px 0px 110px;
+        top: 60px;
+        z-index: 1;
+        height: 8vh;
+    }
+    
+    .navbar {
+        border-bottom: solid black;
+    }
 
-#menuNavbar {
-    display: flex;
-    list-style-type: none;
-    height: 10vh;
-    align-items: center;
-    flex-direction: row;
-    padding-left: 125px;
-    color: white;
-}
+    /*Menu Item Headers*/
+    .menuNav {
+        border-bottom: solid black;
+        position: fixed;
+        width: 30%;
+        top: 90px;
+        height: 40px;
+        margin-left: right;
+        z-index: 1;
+        border-bottom-right-radius: 3cm;
+        align-items: center;
+    }
 
-/*Menu Item Headers*/
-.menuNav {
-    background-color: rgb(0, 114, 198);
-    position: fixed;
-    width: 30%;
-    top: 90px;
-    height: 50px;
-    margin-left: right;
-    z-index: 1;
-    border-bottom-right-radius: 3cm;
-    display: flex;
-    align-items: center;
-}
-
-/* Menu Page Squares */
-.square {
-    float: left;
-    position: relative;
-    width: 25%;
-    padding-bottom: 25%; 
-    margin: 1.66%;
-    overflow: hidden;
-    left: 105px;
-}
-
-.content {
-    position: absolute;
-    height: 50%;
-    width: 60%;
-    padding: 50% 20%;
-}
-
-.table {
-    display: table;
-    height: 100%; 
-    width: 100%;  
-}
-
-/* This is the actual div containing menu item info */
-.table-cell {
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-    width: 100%;
-    border-style: solid;
-    text-align: center;
-}
+    /*Quicklinks*/
+    .quicklinks {
+        padding-top: 20vh;
+        background-color: white;
+    }
+    
+    .boxes {
+        margin: 50px auto 50px auto;
+        height: 200px;
+        min-width: 250px;
+    }

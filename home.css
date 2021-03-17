@@ -1,0 +1,58 @@
+/*Advertisement*/
+
+.newAdvertisement {
+    height: 70vh;
+    padding-top: 60px;
+}
+
+#advertisement {
+    width: 1060px;
+    min-height: 40vh;
+}
+
+
+/*Menu Item Headers*/
+
+.menuHeaders {
+    flex-flow: wrap;
+    min-height: 50vh;
+    padding: 20px;
+}
+
+#pizza,
+#sides,
+#desserts,
+#drinks {
+    min-width: 500px;
+    min-height: 20vh;
+    margin: 20px;
+}
+
+
+/*Quicklinks*/
+
+.quicklinks {
+    min-height: 50vh;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+#contactlessDelivery,
+#becomePart,
+#startOrder {
+    width: 300px;
+    min-height: 40vh;
+    margin: 20px;
+}
+
+
+/*Join Newsletter*/
+
+.joinNewsletter {
+    min-height: 15vh;
+    padding-bottom: 10px;
+}
+
+#newsletterText {
+    padding-bottom: 10px;
+}

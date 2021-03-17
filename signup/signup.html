@@ -4,10 +4,11 @@
 <head>
     <title>Sign up</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="navstyle.css">
+    <link rel="stylesheet" href="../navstyle.css">
     <link rel="stylesheet" href="sign-up-form.css">
-	
-	<!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
+    <link rel="stylesheet" href="../footer.css">
+
+    <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
@@ -42,33 +43,67 @@
 
 <body>
     <!--NAVBAR-->
-    <nav class="navbar">
-        <ul>
-            <li id="logo">
+    <nav class="navbar background-color-coyoteblue">
+        <ul class="left-aligned-div flex-direction-row">
+            <li id="logo" class="basic-div">
                 <a class="navlink" href="../index.html"><img src="../images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
             </li>
-            <li id="menu"><a class="navlink">MENU</a></li>
+            <li id="menu"><a class="navlink" href="../pizzaPageIndex.html">MENU</a></li>
             <li id="specials"><a class="navlink">SPECIALS</a></li>
             <li id="rewards"><a class="navlink">REWARDS</a></li>
             <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
-            <li id="welcome"><a class="navlink">Welcome, User</a></li>
+            <li id="welcome">
+                <a class="navlink"></a>
+            </li>
         </ul>
     </nav>
 
-        <!--SIGNUP FORM-->
-        <div id="signupinfo">
-            <form id="signupform">
-                Login<br><br>
-                <input type="email" id="loginEmail" placeholder="ENTER EMAIL"><br><br>
-                <input type="password" id="loginPassword" placeholder="ENTER PASSWORD"><br><br>
-                <div id="signupinfoLogin"><a>Login</a></div>
-                Sign Up<br><br>
-                <input type="text" id="signUpUserName" placeholder="ENTER USERNAME"><br><br>
-                <input type="email" id="signUpEmail" placeholder="ENTER EMAIL"><br><br>
-                <input type="password" id="signUpPassword" placeholder="ENTER PASSWORD"><br><br>
-                <input type="password" id="signUpReenterPassword" placeholder="REENTER PASSWORD"><br><br>
-                <div id="createAccount"><a>Create Account</a></div>
-            </form>
+    <!--SIGNUP FORM-->
+    <div id="signupinfo" class="basic-div background-color-white">
+        <form id="signupform">
+            Login<br><br>
+            <input type="email" id="loginEmail" class="loginEmal input" placeholder="ENTER EMAIL"><br><br>
+            <input type="password" id="loginPassword" class="loginPassword input" placeholder="ENTER PASSWORD"><br><br><br>
+            <div id="signupinfoLogin" class="basic-div"><a class="hover-color-coyoteblue">Login</a></div><br><br> Sign Up<br><br>
+            <input type="text" id="signUpUserName" class="input" placeholder="ENTER USERNAME"><br><br>
+            <input type="email" id="signUpEmail" class="input" placeholder="ENTER EMAIL"><br><br>
+            <input type="password" id="signUpPassword" class="input" placeholder="ENTER PASSWORD"><br><br>
+            <input type="password" id="signUpReenterPassword" class="input" placeholder="REENTER PASSWORD"><br><br><br>
+            <div id="createAccount" class="basic-div"><a class="hover-color-coyoteblue">Create Account</a></div>
+        </form>
+    </div>
+
+    <footer>
+        <!--General Information-->
+        <div class=" generalInfo basic-div flex-direction-row background-color-coyoteblue">
+            <!--Our Company Section-->
+            <div class="ourCompanySection basic-div flex-direction-column ">
+                <div id="ourCompany ">OUR COMPANY</div>
+                <div id="about "><a>About</a></div>
+                <div id="contactless "><a>Contactless Delivery</a></div>
+            </div>
+            <!--Our Pizza Section-->
+            <div class="ourPizzaSection basic-div flex-direction-column ">
+                <div id="ourPizza ">OUR PIZZA</div>
+                <div id="pizzaMenu "><a>Pizza Menu</a></div>
+                <div id="nutritionInfo "><a>Nutrition Info</a></div>
+                <div id="allergen "><a>Allergen Info</a></div>
+            </div>
+            <!--Help Section-->
+            <div class="helpSection basic-div flex-direction-column ">
+                <div id="help ">HELP</div>
+                <div id="contactUs "><a>Contact Us</a></div>
+                <div id="faq "><a>FAQ</a></div>
+            </div>
         </div>
-    </body>
+
+        <!--Slice of Blue Description-->
+        <div class="description background-color-coyoteblue">
+            Offers good for a limited time at "Slice of Blue " located at California State University, San Bernardino! Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks are registered Trademarks of PepsiCo, Inc. Some
+            offers require the purchase of multiple pizzas. Some offers may be available online only. Certain toppings may be excluded from special offer pizzas or require additional charge. Limited delivery area. Delivery fee may apply and may not be
+            subject to discount. Customer responsible for all applicable taxes.</div>
+        </div>
+    </footer>
+</body>
+
 </html>

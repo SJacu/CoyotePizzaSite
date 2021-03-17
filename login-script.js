@@ -3,8 +3,8 @@
 // https://www.youtube.com/watch?v=aN1LnNq4z54&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&ab_channel=TheNetNinja            
 
 //login information
-const LoginEmail = document.querySelector("#loginEmail");
-const LoginPassword = document.querySelector("#loginPassword");
+const LoginEmail = document.querySelector("#loginmodalEmail");
+const LoginPassword = document.querySelector("#loginmodalPassword");
 const Login = document.querySelector("#loginmodal");
 
 //navbar information
