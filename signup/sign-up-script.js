@@ -3,6 +3,7 @@
 // https://www.youtube.com/watch?v=aN1LnNq4z54&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&ab_channel=TheNetNinja            
 
 //sign-up informaiton
+const signUpUsername = document.querySelector("#signUpUserName");
 const signUpEmailInput = document.querySelector("#signUpEmail");
 const signUpPasswordInput = document.querySelector("#signUpPassword");
 const signUpPasswordInput2 = document.querySelector("#signUpReenterPassword");
@@ -34,6 +35,7 @@ auth.onAuthStateChanged(user => {
 function Sign_Up()
 {
     //can use squarebracket notation for a form object
+    const userName = signUpUsername.value;
     const email = signUpEmailInput.value;
     const password = signUpPasswordInput.value;
     const passwordConfirm = signUpPasswordInput2.value;
@@ -45,12 +47,8 @@ function Sign_Up()
             //uses basic firebase auth sign-up method.
             auth.createUserWithEmailAndPassword(email, password).then(cred =>
             {
-                //clear input feilds
-                signUpEmailInput.value = "";
-                signUpPasswordInput.value = "";
-                signUpPasswordInput2.value = "";
-                window.location.href = "../index.html";
-                alert("Signed up Succesffuly");
+                userID = cred.user.uid;
+                Create_User(userID, userName, email);
             });
         }
         else if(password.length < 6) //if password is not of proper length
@@ -62,10 +60,34 @@ function Sign_Up()
         }
     }else{
         alert("Passwords do not match.");
-    }
-
-    
+    }   
 }
+
+function Create_User(uID, useNam, email)
+{
+    let today = new Date();
+    let date = (today.getMonth()+1) + "/" + today.getDate() + "/" + today.getFullYear();
+    db.collection("users").add(
+    {
+        UID: uID,
+        username: useNam,
+        email: email,
+        dateJoined: date,
+        admin: false
+    }).then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        //clear input feilds from Sign_Up;
+        signUpEmailInput.value = "";
+        signUpPasswordInput.value = "";
+        signUpPasswordInput2.value = "";
+        window.location.href = "../index.html";
+        alert("Signed up Succesffuly");
+        
+    }).catch((error) => {
+        console.error("Error adding document: ", error);
+    });
+}
+
 //attaches our sign-up button to our sign up function
 //Using default event (E) allows us to use the preventDefault method, which doens't make the page refresh every time somthing happens
 signUpButton.addEventListener("click", (e) =>
