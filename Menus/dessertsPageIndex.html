@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Slice of Blue</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navstyle.css">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="footer.css">
+    <title>Slice of Blue Menu</title>
+    <link href="menuStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navstyle.css">
+    <link rel="stylesheet" href="../footer.css">
 
     <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
     <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>     <!-- needed to use firebase firestore -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  <!-- needed to use firebase authentication -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <!-- needed to use firebase firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <!-- needed to use firebase authentication -->
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -34,8 +38,8 @@
     </script>
     <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
 
-    <script src="mosalScript.js" defer></script>
-    <script src="login-script.js" defer></script>
+    <script src="../modalScript.js" defer></script>
+    <script src="../login-script.js" defer></script>
 </head>
 
 <body>
@@ -43,11 +47,11 @@
     <nav class="navbar background-color-coyoteblue">
         <ul class="left-aligned-div flex-direction-row">
             <li id="logo" class="basic-div">
-                <a class="navlink" href="index.html"><img src="images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
+                <a class="navlink" href="../index.html"><img src="../images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
             </li>
-            <li id="menu"><a class="navlink" href="Menus/pizzaPageIndex.html">MENU</a></li>
-            <li id="specials"><a class="navlink" href="Menus/specialsPageIndex.html">SPECIALS</a></li>
-            <li id="rewards"><a class="navlink" href="rewardsPageIndex.html">REWARDS</a></li>
+            <li id="menu"><a class="navlink" href="pizzaPageIndex.html">MENU</a></li>
+            <li id="specials"><a class="navlink" href="specialsPageIndex.html">SPECIALS</a></li>
+            <li id="rewards"><a class="navlink" href= "rewardsPageIndex.html">REWARDS</a></li>
             <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
             <li id="welcome">
                 <a class="navlink"></a>
@@ -64,52 +68,48 @@
                 <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="index.html">Login</a></div>
                 <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="signup/signup.html">Sign Up</a></div>
             </div>
-        </div>
     </nav>
 
-    <!--Advertisement-->
-    <div class="newAdvertisement basic-div">
-        <div id="advertisement" class="basic-div border-solid"><a>NEW ADVERTISEMENT</a></div>
+    <!--Menu NAVBAR-->
+    <nav id="menuHeaders" class="menuNav background-color-coyoteblue">
+        <ul id="menuNavbar" class="left-aligned-div flex-direction-row">
+            <li><a class="navlink" href="pizzaPageIndex.html">PIZZA</a></li>
+            <li><a class="navlink" href="sidesPageIndex.html">SIDES</a></li>
+            <li><a class="navlink" href="dessertsPageIndex.html">DESSERTS</a></li>
+            <li><a class="navlink" href="drinksPageIndex.html">DRINKS</a></li>
+        </ul>
+    </nav>
+
+    <div class="quicklinks">
+        <div class="basic-div">
+            <div class="boxes basic-div border-solid"><img src= "../images/desserts/oatmeal-raisin-cookies.jpg" heigth="550px" width="300px"></div>
+            <div class="boxes basic-div border-solid"><img src= "../images/desserts/cookies.jpg" heigth="550px" width="300px"></div>
+            <div class="boxes basic-div border-solid"><img src= "../images/desserts/peanuts.jpg" heigth="550px" width="300px"></div>
+        </div>
+
+        <div class="basic-div">
+            <div class="boxes basic-div border-solid"><img src= "../images/desserts/brownies.jpg" heigth="550px" width="300px"></div>
+            <div class="boxes basic-div border-solid"><img src= "../images/desserts/cake.jpg" heigth="550px" width="300px"></div>
+            <div class="boxes basic-div border-solid"><img src= "../images/desserts/vanilla bundt cake.jpg" heigth="550px" width="300px"></div>
+        </div>
     </div>
 
-    <!--Menu Item Headers-->
-    <div class="menuHeaders basic-div background-color-coyoteblue">
-        <div id="pizza" class="basic-div border-solid background-color-white"><a href="Menus/pizzaPageIndex.html">PIZZA</a></div>
-        <div id="sides" class="basic-div border-solid background-color-white"><a href="Menus/sidesPageIndex.html">SIDES</a></div>
-        <div id="desserts" class="basic-div border-solid background-color-white"><a href="Menus/dessertsPageIndex.html">DESSERTS</a></div>
-        <div id="drinks" class="basic-div border-solid background-color-white"><a href="Menus/drinksPageIndex.html">DRINKS</a></div>
-    </div>
-
-    <!--Quicklinks-->
-    <div class="quicklinks basic-div flex-direction-row">
-        <div id="contactlessDelivery" class="basic-div border-solid"><a>CONTACTLESS DELIVERY ADVERT</a></div>
-        <div id="becomePart" class="basic-div border-solid"><a>BECOME PART OF THE TEAM</a></div>
-        <div id="startOrder" class="basic-div border-solid"><a>START YOUR ORDER</a></div>
-    </div>
-
-    <!--Join Newsletter-->
-    <div class="joinNewsletter basic-div background-color-coyoteblue flex-direction-column">
-        <div id="newsletterText" class="color-white">JOIN OUR NEWSLETTER!</div>
-        <input type="email" id="newsletterEmail" class="input" placeholder="EMAIL">
-    </div>
 
     <footer>
         <!--General Information-->
-        <div class="generalInfo basic-div flex-direction-row">
+        <div class="generalInfo background-color-coyoteblue basic-div flex-direction-row">
             <!--Our Company Section-->
             <div class="ourCompanySection basic-div flex-direction-column">
                 <div id="ourCompany">OUR COMPANY</div>
                 <div id="about"><a>About</a></div>
                 <div id="contactless"><a>Contactless Delivery</a></div>
             </div>
-
             <!--Our Pizza Section-->
             <div class="ourPizzaSection basic-div flex-direction-column">
                 <div id="ourPizza">OUR PIZZA</div>
                 <div id="pizzaMenu"><a>Pizza Menu</a></div>
                 <div id="nutritionInfo"><a>Nutrition Info</a></div>
                 <div id="allergen"><a>Allergen Info</a></div>
-
             </div>
             <!--Help Section-->
             <div class="helpSection basic-div flex-direction-column">
@@ -120,11 +120,12 @@
         </div>
 
         <!--Slice of Blue Description-->
-        <div class="description">
+        <div class="description background-color-coyoteblue">
             Offers good for a limited time at "Slice of Blue" located at California State University, San Bernardino! Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks are registered Trademarks of PepsiCo, Inc. Some offers
             require the purchase of multiple pizzas. Some offers may be available online only. Certain toppings may be excluded from special offer pizzas or require additional charge. Limited delivery area. Delivery fee may apply and may not be subject
-            to discount. Customer responsible for all applicable taxes.
+            to discount. Customer responsible for all applicable taxes.</div>
         </div>
     </footer>
 </body>
+
 </html>
