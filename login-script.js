@@ -19,13 +19,27 @@ function hideLoginSignup()
 }
 
 //listen for auth status changes, returns user if user is considered "logged in"
-auth.onAuthStateChanged(user => {
+auth.onAuthStateChanged(user =>
+{
     if(user)
     {
         //user is logged in
         console.log("There is a user logged in");
-        UserDisplay.textContent = "Welcome, " + user.email;
         NavLogin.style.display = "none";
+        
+        //firestore looks through users documents untill it finds a document with a matching UID as the user logged in
+        db.collection("users").where("UID", "==", user.uid).get().then((querySnapshot) =>
+        {
+            querySnapshot.forEach((doc) =>
+            {
+                // doc.data() is never undefined for query doc snapshots
+                UserDisplay.textContent = "Welcome, " + doc.data().username;
+            });
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+        UserDisplay.textContent = "Welcome, " + user.email;
     }else{
         //user is logged out
         console.log("There is no user logged in");
