@@ -79,7 +79,7 @@ function Log_In()
             LoginPassword.value = "";
             alert("Logged In Successfully");
             hideLoginSignup();
-            window.location.href = "index.html";
+            window.location.href = window.location.pathname;
         });
     }else{
         //if one of the forms are empty
