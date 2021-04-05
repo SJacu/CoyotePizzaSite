@@ -1,0 +1,79 @@
+/*Quicklinks*/
+
+.quicklinks {
+    min-height: 100vh;
+    padding: 20px;
+    
+}
+
+#myCart{
+    width: 600px;
+    min-height: 70vh;
+    margin: 20px;
+}
+
+#payment {
+    width: 400px;
+    min-height: 70vh;
+    margin: 20px;
+}
+
+#item {
+    text-align: left;
+    margin-left: 10px;
+}
+
+#totalBox {
+    width: 110px;
+    height: 25px;
+    margin-top: 108%;
+    margin-left: 72%;
+}
+
+
+/*Join Newsletter*/
+
+.joinNewsletter {
+    min-height: 15vh;
+    padding-bottom: 10px;
+}
+
+#newsletterText {
+    padding-bottom: 10px;
+}
+
+
+
+/*Sign Up Form*/
+#paymentinfo {
+    margin-left: 10%;
+    height: 65vh;
+    align-items: left;
+}
+
+#cardName,
+#cardNumber,
+#expiration,
+#securityCode,
+#firstName,
+#lastName,
+#address,
+#city,
+#zipcode{
+    height: 35px;
+    width: 270px;
+}
+
+#update {
+    padding-left: 245px;
+}
+
+#paymentinfoLogin {
+    padding-left: 2080px;
+}
+
+
+#update:hover {
+    text-shadow: 2px 2px 4px rgb(0, 114, 198);
+    font-weight: bold;
+}
