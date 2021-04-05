@@ -8,8 +8,36 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="footer.css">
 
-    <script src="script.js" defer></script>
-    <script src="login-script.js" defer></script>
+    <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>     <!-- needed to use firebase firestore -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  <!-- needed to use firebase authentication -->
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
+                authDomain: "sliceofblue-d8622.firebaseapp.com",
+                projectId: "sliceofblue-d8622",
+                storageBucket: "sliceofblue-d8622.appspot.com",
+                messagingSenderId: "924075037117",
+                appId: "1:924075037117:web:890ec08ecd299d459182d4",
+                measurementId: "G-LCBLS25DNQ"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            const db = firebase.firestore(); //used to initialize our database object we'll be refering to
+            const auth = firebase.auth(); //initializes our authorization sdk
+        </script>
+        <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
+
+        <!--LOAD ANY NEEDED JAVASCRIPT FILES HERE-->
+        <script src="modalScript.js" defer></script>
+        <script src="login-script.js" defer></script>
 </head>
 
 <body>
@@ -116,10 +144,8 @@
             <div class="ourPizzaSection basic-div flex-direction-column">
                 <div id="ourPizza">OUR PIZZA</div>
                 <div id="pizzaMenu"><a>Pizza Menu</a></div>
-                <div id="nutritionInfo"><a>Nutrition Info</a></div>
-                <div id="allergen"><a>Allergen Info</a></div>
-
             </div>
+            
             <!--Help Section-->
             <div class="helpSection basic-div flex-direction-column">
                 <div id="help">HELP</div>

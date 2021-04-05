@@ -23,6 +23,7 @@ auth.onAuthStateChanged(user =>
 {
     if(user)
     {
+        hideLoginSignup();
         //user is logged in
         console.log("There is a user logged in");
         NavLogin.style.display = "none";
@@ -41,6 +42,7 @@ auth.onAuthStateChanged(user =>
         });
         UserDisplay.textContent = "Welcome, " + user.email;
     }else{
+        hideLoginSignup();
         //user is logged out
         console.log("There is no user logged in");
         UserDisplay.textContent = "";
