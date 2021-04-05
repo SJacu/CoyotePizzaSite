@@ -1,124 +1,130 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Slice of Blue</title>
 
-        <!--LOAD ANY NEEDED CSS FILES UNDER THE THREE BELOW-->
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="navstyle.css">
-        <link rel="stylesheet" href="footer.css">
+<head>
+    <title>Slice of Blue</title>
 
-        <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-        <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>     <!-- needed to use firebase firestore -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  <!-- needed to use firebase authentication -->
-        <script>
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            var firebaseConfig = {
-                apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
-                authDomain: "sliceofblue-d8622.firebaseapp.com",
-                projectId: "sliceofblue-d8622",
-                storageBucket: "sliceofblue-d8622.appspot.com",
-                messagingSenderId: "924075037117",
-                appId: "1:924075037117:web:890ec08ecd299d459182d4",
-                measurementId: "G-LCBLS25DNQ"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-            const db = firebase.firestore(); //used to initialize our database object we'll be refering to
-            const auth = firebase.auth(); //initializes our authorization sdk
-        </script>
-        <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
+    <!--LOAD ANY NEEDED CSS FILES UNDER THE THREE BELOW-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navstyle.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="aboutus.css">
+    <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <!-- needed to use firebase firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <!-- needed to use firebase authentication -->
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
+            authDomain: "sliceofblue-d8622.firebaseapp.com",
+            projectId: "sliceofblue-d8622",
+            storageBucket: "sliceofblue-d8622.appspot.com",
+            messagingSenderId: "924075037117",
+            appId: "1:924075037117:web:890ec08ecd299d459182d4",
+            measurementId: "G-LCBLS25DNQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore(); //used to initialize our database object we'll be refering to
+        const auth = firebase.auth(); //initializes our authorization sdk
+    </script>
+    <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
 
-        <!--LOAD ANY NEEDED JAVASCRIPT FILES HERE-->
-        <script src="modalScript.js" defer></script>
-        <script src="login-script.js" defer></script>
-    </head>
+    <!--LOAD ANY NEEDED JAVASCRIPT FILES HERE-->
+    <script src="modalScript.js" defer></script>
+    <script src="login-script.js" defer></script>
+</head>
 
-    <body>
-        <!--NAVBAR-->
-        <nav class="navbar background-color-coyoteblue">
-            <ul class="left-aligned-div flex-direction-row">
-                <li id="logo" class="basic-div">
-                    <a class="navlink" href="../index.html"><img src="../images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
-                </li>
-                <li id="menu"><a class="navlink" href="Menus/pizzaPageIndex.html">MENU</a></li>
-                <li id="specials"><a class="navlink" href="Menus/specialsPageIndex.html">SPECIALS</a></li>
-                <li id="rewards"><a class="navlink" href="rewardsPageIndex.html">REWARDS</a></li>
-                <li id="about"><a class="navlink" href="AboutUsPageIndex.html">ABOUTUS</a></li>
-                <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
-                <li id="welcome">
-                    <a class="navlink"></a>
-                </li>
-                <li id="logout" class="navlink"><a>LOGOUT</a></li>
-                <li id="login" class="navlink"><a>LOGIN</a></li>
-            </ul>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar background-color-coyoteblue">
+        <ul class="left-aligned-div flex-direction-row">
+            <li id="logo" class="basic-div">
+                <a class="navlink" href="../index.html"><img src="../images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
+            </li>
+            <li id="menu"><a class="navlink" href="Menus/pizzaPageIndex.html">MENU</a></li>
+            <li id="specials"><a class="navlink" href="Menus/specialsPageIndex.html">SPECIALS</a></li>
+            <li id="rewards"><a class="navlink" href="rewardsPageIndex.html">REWARDS</a></li>
+            <li id="about"><a class="navlink" href="AboutUsPageIndex.html">ABOUTUS</a></li>
+            <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
+            <li id="welcome">
+                <a class="navlink"></a>
+            </li>
+            <li id="logout" class="navlink"><a>LOGOUT</a></li>
+            <li id="login" class="navlink"><a>LOGIN</a></li>
+        </ul>
 
-            <!--Login/Sign Up Modal-->
-            <div class="loginSignup basic-div border-solid flex-direction-column background-color-white">
-                <input type="email" id="loginmodalEmail" class="loginEmail" placeholder="EMAIL"><br>
-                <input type="password" id="loginmodalPassword" class="loginPassword" placeholder="PASSWORD"><br>
-                <div class="loginSignupButtons">
-                    <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="index.html">Login</a></div>
-                    <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="signup/signup.html">Sign Up</a></div>
-                </div>
-        </nav>
+        <!--Login/Sign Up Modal-->
+        <div class="loginSignup basic-div border-solid flex-direction-column background-color-white">
+            <input type="email" id="loginmodalEmail" class="loginEmail" placeholder="EMAIL"><br>
+            <input type="password" id="loginmodalPassword" class="loginPassword" placeholder="PASSWORD"><br>
+            <div class="loginSignupButtons">
+                <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="index.html">Login</a></div>
+                <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="signup/signup.html">Sign Up</a></div>
+            </div>
+    </nav>
 
 
-        <!--THIS IS WHERE YOU CAN INSERT YOUR PAGE-SPECIFIC CODE-->
-        <!--NOTE THAT YOU MAY NEED TO FIX HREFs TO REDIRECT TO PROPER PAGES-->
-        <br><br><br><br><br><br><br><br>
+    <!--THIS IS WHERE YOU CAN INSERT YOUR PAGE-SPECIFIC CODE-->
+    <!--NOTE THAT YOU MAY NEED TO FIX HREFs TO REDIRECT TO PROPER PAGES-->
+    <br><br><br><br><br><br><br><br>
+    <div class=" aboutusWrapper basic-div flex-direction-column">
         <div class="AboutUs">
-            <p>Here at Slice of Blue, we dedicate our time to using the best and freshest ingredients.  We waste no time or food when using our vegetables. 
-            Our pizza family is hungry for perfection as we started this company more than 5+ weeks ago. And we are driven to be the best at making innovative new products and recipes.</p> 
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Here at Slice of Blue, we dedicate our time to using the best and freshest ingredients. We waste no time or food when using our vegetables. Our pizza family is hungry for perfection as we started this company more than
+                5+ weeks ago. And we are driven to be the best at making innovative new products and recipes.</p>
             <br>
-            <p>Quality is our story. Our pizzas represent the glory and success of your enjoyment. Our first location  in San Bernardino, CA, solidified our foundations for success. 
-            It’s grown from a couple running ideas to a full fledged webpage.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Quality is our story. Our pizzas represent the glory and success of your enjoyment. Our first location in San Bernardino, CA, solidified our foundations for success. It’s grown from a couple running ideas to a full
+                fledged webpage.</p>
             <br>
-            <p>We don’t use cheap or dirty processed ingredients. 
-            Whether it’s our signature sauce, toppings, our original fresh dough, or even our circle box, we invest in the finest ingredients to ensure that you have a pizza that looks more expensive than your car.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;We don’t use cheap or dirty processed ingredients. Whether it’s our signature sauce, toppings, our original fresh dough, or even our circle box, we invest in the finest ingredients to ensure that you have a pizza that
+                looks more expensive than your car.</p>
             <br>
-            <p>For you, it's more than a pizza, it’s your prized possession. It’s about you cherishing your pizza like a god. We want you to believe in the religion of Blue. 
-            It’s our goal to make sure you either love it, or  pray to it. It will be the best for any occasion.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;For you, it's more than a pizza, it’s your prized possession. It’s about you cherishing your pizza like a god. We want you to believe in the religion of Blue. It’s our goal to make sure you either love it, or pray to
+                it. It will be the best for any occasion.</p>
         </div>
-        <br><br><br><br><br>
-        <footer>
-            <!--General Information-->
-            <div class="generalInfo basic-div flex-direction-row background-color-coyoteblue">
-                <!--Our Company Section-->
-                <div class="ourCompanySection basic-div flex-direction-column">
-                    <div id="ourCompany">OUR COMPANY</div>
-                    <div id="about"><a>ABOUTUS</a></div>
-                    <div id="contactless"><a>Contactless Delivery</a></div>
-                </div>
-
-                <!--Our Pizza Section-->
-                <div class="ourPizzaSection basic-div flex-direction-column">
-                    <div id="ourPizza">OUR PIZZA</div>
-                    <div id="pizzaMenu"><a>Pizza Menu</a></div>
-                    <div id="nutritionInfo"><a>Nutrition Info</a></div>
-                    <div id="allergen"><a>Allergen Info</a></div>
-
-                </div>
-                <!--Help Section-->
-                <div class="helpSection basic-div flex-direction-column">
-                    <div id="help">HELP</div>
-                    <div id="contactUs"><a>Contact Us</a></div>
-                    <div id="faq"><a>FAQ</a></div>
-                </div>
+    </div>
+    <br><br><br><br><br>
+    <footer>
+        <!--General Information-->
+        <div class="generalInfo basic-div flex-direction-row background-color-coyoteblue">
+            <!--Our Company Section-->
+            <div class="ourCompanySection basic-div flex-direction-column">
+                <div id="ourCompany">OUR COMPANY</div>
+                <div id="about"><a>ABOUTUS</a></div>
+                <div id="contactless"><a>Contactless Delivery</a></div>
             </div>
 
-            <!--Slice of Blue Description-->
-            <div class="description">
-                Offers good for a limited time at "Slice of Blue" located at California State University, San Bernardino! Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks are registered Trademarks of PepsiCo, Inc. Some offers
-                require the purchase of multiple pizzas. Some offers may be available online only. Certain toppings may be excluded from special offer pizzas or require additional charge. Limited delivery area. Delivery fee may apply and may not be subject
-                to discount. Customer responsible for all applicable taxes.
+            <!--Our Pizza Section-->
+            <div class="ourPizzaSection basic-div flex-direction-column">
+                <div id="ourPizza">OUR PIZZA</div>
+                <div id="pizzaMenu"><a>Pizza Menu</a></div>
+                <div id="nutritionInfo"><a>Nutrition Info</a></div>
+                <div id="allergen"><a>Allergen Info</a></div>
+
             </div>
-        </footer>
-    </body>
+            <!--Help Section-->
+            <div class="helpSection basic-div flex-direction-column">
+                <div id="help">HELP</div>
+                <div id="contactUs"><a>Contact Us</a></div>
+                <div id="faq"><a>FAQ</a></div>
+            </div>
+        </div>
+
+        <!--Slice of Blue Description-->
+        <div class="description">
+            Offers good for a limited time at "Slice of Blue" located at California State University, San Bernardino! Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks are registered Trademarks of PepsiCo, Inc. Some offers
+            require the purchase of multiple pizzas. Some offers may be available online only. Certain toppings may be excluded from special offer pizzas or require additional charge. Limited delivery area. Delivery fee may apply and may not be subject
+            to discount. Customer responsible for all applicable taxes.
+        </div>
+    </footer>
+</body>
+
 </html>
