@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="cartTitle">Cart System</div>
+
+    <div class="wrapper">
+        <div class="menu">Menu
+            <span class="menuItem" id="menuItem1">
+            <span>Item 1</span>
+            <span>$9.99</span>
+            <button type="button" class="itemButton">+</button>
+            </span>
+            <span class="menuItem" id="menuItem2">
+            <span>Item 2</span>
+            <span>$12.99</span>
+            <button type="button" class="itemButton">+</button>
+            </span>
+            <span class="menuItem" id="menuItem3">
+            <span>Item 3</span>
+            <span>$4.99</span>
+            <button type="button" class="itemButton">+</button>
+            </span>
+            <span class="menuItem" id="menuItem4">
+            <span>Item 4</span>
+            <span>$19.99</span>
+            <button type="button" class="itemButton">+</button>
+            </span>
+            <!--
+            <span class="menuItem">
+            <span>Item 5</span>
+            <span>$0.99</span>
+            <button type="button" class="itemButton">+</button>
+            </span>
+            -->
+        </div>
+
+        <div class="cart">Cart
+            <div class="total"><span class="totalPrice"></span></div>
+        </div>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.3.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

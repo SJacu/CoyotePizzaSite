@@ -1,0 +1,39 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10vh;
+}
+
+.cartTitle {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.menu,
+.cart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu {
+    width: 50vw;
+}
+
+.cart {
+    width: 40vw;
+}
+
+.cartItem,
+.menuItem,
+.cartTitle {
+    margin-bottom: 20px;
+}
