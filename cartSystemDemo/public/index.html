@@ -7,9 +7,13 @@
 </head>
 
 <body>
-    <div class="cartTitle">Cart System</div>
 
     <div class="wrapper">
+        <!--
+        <div class="cartTitle">
+            <h1>Cart System</h1>
+        </div>
+
         <div class="menu">Menu
             <span class="menuItem" id="menuItem1">
             <span>Item 1</span>
@@ -31,17 +35,42 @@
             <span>$19.99</span>
             <button type="button" class="itemButton">+</button>
             </span>
-            <!--
+
             <span class="menuItem">
             <span>Item 5</span>
             <span>$0.99</span>
             <button type="button" class="itemButton">+</button>
             </span>
-            -->
+
         </div>
 
         <div class="cart">Cart
             <div class="total"><span class="totalPrice"></span></div>
+        </div>
+    -->
+
+        <div class="addmenuitem">
+            <h1>Add Menu Item</h1><br>
+
+            <label>Item Type</label>
+            <select name="itemtype" class="itemtype">
+            <option value="Pizza">Pizza</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Sides">Sides</option>
+            <option value="Drinks">Drinks</option>
+            </select><br>
+
+            <label>Item Name</label>
+            <input type="text" class="itemname"><br>
+            <label>Item Price</label>
+            <input type="number" class="itemprice"><br>
+            <label>Description</label>
+            <input type="text" class="description"><br>
+            <button onclick="Menu.addMenuItems()">ADD ITEM</button>
+        </div>
+
+        <div class="tempMenu">
+            <h1>Menu</h1>
         </div>
     </div>
 
@@ -58,6 +87,7 @@
     <script src="/__/firebase/init.js"></script>
 
     <script src="script.js"></script>
+    <script src="item.js"></script>
 </body>
 
 </html>

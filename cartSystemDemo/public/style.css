@@ -7,8 +7,6 @@ body {
     display: flex;
     justify-content: center;
     width: 100vw;
-    font-size: 30px;
-    font-weight: bold;
 }
 
 .wrapper {
@@ -18,22 +16,40 @@ body {
 }
 
 .menu,
-.cart {
+.cart,
+.addmenuitem,
+.tempMenu {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.menu {
-    width: 50vw;
-}
-
-.cart {
-    width: 40vw;
+.menu,
+.tempMenu,
+.cart,
+.addmenuitem {
+    width: 45vw;
 }
 
 .cartItem,
 .menuItem,
 .cartTitle {
     margin-bottom: 20px;
+}
+
+.itemname,
+.itemprice,
+.description {
+    width: 250px;
+    height: 25px;
+}
+
+.itemtype {
+    width: 256px;
+    height: 35px;
+}
+
+.itemprice::-webkit-outer-spin-button,
+.itemprice::-webkit-inner-spin-button {
+    display: none;
 }
