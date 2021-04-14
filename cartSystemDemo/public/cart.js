@@ -79,7 +79,7 @@ var Cart = {
                 this.itemName = doc.data().name;
                 this.itemPrice = doc.data().price;
 
-                //add item price to total, and format
+                //Add item price to total, and format
                 this.itemPrice = parseFloat(this.itemPrice, 10);
 
                 //Look for the document id that corresponds to the user's id

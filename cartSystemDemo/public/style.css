@@ -15,17 +15,20 @@ body {
     flex-wrap: wrap;
 }
 
+.menu {
+    text-align: center;
+}
+
 .menu,
 .cart,
 .addmenuitem,
-.tempMenu {
+.menu {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .menu,
-.tempMenu,
 .cart,
 .addmenuitem {
     width: 33%;

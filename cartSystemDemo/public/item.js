@@ -7,7 +7,7 @@ var Menu = {
     itemName: document.querySelector(".itemname"),
     itemPrice: document.querySelector(".itemprice"),
     description: document.querySelector(".description"),
-    menuDisplay: document.querySelector(".tempMenu"),
+    menuDisplay: document.querySelector(".menu"),
 
     addMenuItems: function() {
         //Write menu item properties to firestore
@@ -21,6 +21,7 @@ var Menu = {
         itemPrice = parseFloat(this.itemPrice.value, 10);
         description = this.description.value;
 
+        //Write menu item properties to Firestore
         itemRef.collection(itemType).doc(itemName).set({
                 name: itemName,
                 price: itemPrice,
@@ -37,21 +38,14 @@ var Menu = {
     },
 
     getAllMenuItems: function() {
-        //Find firestore Menu Items
-
-        //Get All Pizzas
+        //Find firestore menu items      
         this.getMenuItemsFrom("Pizza")
-
-        //Get All Sides
         this.getMenuItemsFrom("Drinks")
-
-        //Get All Drinks
         this.getMenuItemsFrom("Sides")
-
-        //Get All Desserts
         this.getMenuItemsFrom("Desserts")
     },
     getMenuItemsFrom(itemtype) {
+        //Get all menu items from specific item type
         itemRef.collection(itemtype).get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
@@ -69,4 +63,5 @@ var Menu = {
     }
 }
 
+//Get menu items from Firestore when the page loads
 window.onload = Menu.getAllMenuItems();
