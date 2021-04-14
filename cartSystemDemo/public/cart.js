@@ -73,23 +73,11 @@ var Cart = {
         var userDocID = '';
 
         //Get specific menu item from list
-        /*
-        parseInt(index);
-        var itemName = Cart.menuItem[index].children[0].innerHTML;
-        var itemPrice = Cart.menuItem[index].children[1].innerHTML;
-        */
-
         firestore.doc("items/menuitems" + "/" + itemtype + "/" + itemname).get()
             .then((doc) => {
                 console.log(doc.data())
                 this.itemName = doc.data().name;
                 this.itemPrice = doc.data().price;
-
-
-
-
-                //Remove $ from this.itemPrice string
-                //this.itemPrice = this.itemPrice.substring(1);
 
                 //add item price to total, and format
                 this.itemPrice = parseFloat(this.itemPrice, 10);
@@ -226,12 +214,3 @@ var Cart = {
             });
     }
 };
-
-//Fixed menu with preset indexes
-/*
-Cart.menuItem[0].addEventListener('click', function() { Cart.addItemToCart('0') });
-Cart.menuItem[1].addEventListener('click', function() { Cart.addItemToCart('1') });
-Cart.menuItem[2].addEventListener('click', function() { Cart.addItemToCart('2') });
-Cart.menuItem[3].addEventListener('click', function() { Cart.addItemToCart('3') });
-Cart.menuItem[4].addEventListener('click', function() { Cart.addItemToCart('4') });
-*/

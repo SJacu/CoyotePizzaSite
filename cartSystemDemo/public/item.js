@@ -36,59 +36,23 @@ var Menu = {
             });
     },
 
-    getMenuItems: function() {
+    getAllMenuItems: function() {
         //Find firestore Menu Items
 
         //Get All Pizzas
-        itemRef.collection("Pizza").get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    console.log(doc.data())
-                        //Add HTML Element for each menu item w/ add button
-                    this.menuDisplay.innerHTML += `<span>` +
-                        doc.data().name + " " + "$" +
-                        doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
-                        `</span>` +
-                        `<div>` + doc.data().description + `</div>` +
-                        `<br><br>`
-                });
-            })
+        this.getMenuItemsFrom("Pizza")
 
         //Get All Sides
-        itemRef.collection("Sides").get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    console.log(doc.data())
-                        //Add HTML Element for each menu item w/ add button
-                    this.menuDisplay.innerHTML += `<span>` +
-                        doc.data().name + " " + "$" +
-                        doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
-                        `</span>` +
-                        `<div>` + doc.data().description + `</div>` +
-                        `<br><br>`
-                });
-            })
+        this.getMenuItemsFrom("Drinks")
 
         //Get All Drinks
-        itemRef.collection("Drinks").get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    console.log(doc.data())
-                        //Add HTML Element for each menu item w/ add button
-                    this.menuDisplay.innerHTML += `<span>` +
-                        doc.data().name + " " + "$" +
-                        doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
-                        `</span>` +
-                        `<div>` + doc.data().description + `</div>` +
-                        `<br><br>`
-                });
-            })
+        this.getMenuItemsFrom("Sides")
 
         //Get All Desserts
-        itemRef.collection("Desserts").get()
+        this.getMenuItemsFrom("Desserts")
+    },
+    getMenuItemsFrom(itemtype) {
+        itemRef.collection(itemtype).get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     console.log(doc.data())
@@ -105,4 +69,4 @@ var Menu = {
     }
 }
 
-window.onload = Menu.getMenuItems();
+window.onload = Menu.getAllMenuItems();
