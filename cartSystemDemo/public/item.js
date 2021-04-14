@@ -1,5 +1,5 @@
 /*Menu Items*/
-var itemRef = firestore.doc("items/menuitems")
+var itemRef = firestore.doc("items/menuitems");
 
 var Menu = {
     //Read menu item properties from input
@@ -24,7 +24,8 @@ var Menu = {
         itemRef.collection(itemType).doc(itemName).set({
                 name: itemName,
                 price: itemPrice,
-                description: description
+                description: description,
+                type: itemType
             })
             .then(() => {
                 console.log("Document successfully written!");
@@ -47,7 +48,7 @@ var Menu = {
                     this.menuDisplay.innerHTML += `<span>` +
                         doc.data().name + " " + "$" +
                         doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `')">+</button>` +
+                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
                         `</span>` +
                         `<div>` + doc.data().description + `</div>` +
                         `<br><br>`
@@ -63,7 +64,7 @@ var Menu = {
                     this.menuDisplay.innerHTML += `<span>` +
                         doc.data().name + " " + "$" +
                         doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `')">+</button>` +
+                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
                         `</span>` +
                         `<div>` + doc.data().description + `</div>` +
                         `<br><br>`
@@ -79,7 +80,7 @@ var Menu = {
                     this.menuDisplay.innerHTML += `<span>` +
                         doc.data().name + " " + "$" +
                         doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `')">+</button>` +
+                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
                         `</span>` +
                         `<div>` + doc.data().description + `</div>` +
                         `<br><br>`
@@ -95,7 +96,7 @@ var Menu = {
                     this.menuDisplay.innerHTML += `<span>` +
                         doc.data().name + " " + "$" +
                         doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `')">+</button>` +
+                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
                         `</span>` +
                         `<div>` + doc.data().description + `</div>` +
                         `<br><br>`

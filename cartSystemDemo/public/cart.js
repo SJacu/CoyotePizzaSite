@@ -15,7 +15,7 @@ var totalPrice = document.querySelector(".totalPrice");
 //This function updates current changes to the cart
 function updateCart() {
 
-    itemInCart = 'Cart';
+    itemInCart = '<h1>Cart</h1>';
 
     //Look for the document id that corresponds to the user's id
     userRef.where("UID", "==", userID)
@@ -29,7 +29,7 @@ function updateCart() {
             userRef.doc(userDocID).collection("Cart")
                 .onSnapshot((querySnapshot) => {
 
-                    itemInCart = 'Cart';
+                    itemInCart = '<h1>Cart</h1>';
                     cartDisplay.innerHTML = itemInCart;
 
                     querySnapshot.forEach((doc) => {
@@ -62,82 +62,96 @@ getRealtimeUpdates = updateCart();
 
 //Cart Object that controls any changes to the Cart data
 var Cart = {
-    //Fixed menu list (should be dynamic in final version)
-    menuItem: document.querySelectorAll(".menuItem"),
 
-    addItemToCart: function(index) {
+    menuItem: document.querySelectorAll(".menuItem"),
+    itemName: '',
+    itemPrice: '',
+
+    addItemToCart: function(itemname, itemtype) {
 
         var userID = "tempkey";
         var userDocID = '';
 
         //Get specific menu item from list
+        /*
         parseInt(index);
         var itemName = Cart.menuItem[index].children[0].innerHTML;
         var itemPrice = Cart.menuItem[index].children[1].innerHTML;
+        */
 
-        //Remove $ from itemPrice string
-        itemPrice = itemPrice.substring(1);
+        firestore.doc("items/menuitems" + "/" + itemtype + "/" + itemname).get()
+            .then((doc) => {
+                console.log(doc.data())
+                this.itemName = doc.data().name;
+                this.itemPrice = doc.data().price;
 
-        //add item price to total, and format
-        itemPrice = parseFloat(itemPrice, 10);
 
-        //Look for the document id that corresponds to the user's id
-        userRef.where("UID", "==", userID)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    userDocID = doc.id;
-                    console.log(userDocID, " => ", doc.data());
 
-                    if (userDocID != '') {
 
-                        var cartRef = userRef.doc(userDocID).collection("Cart");
-                        var quantity = 1; //default quantity if item isn't in Cart
-                        var finalPrice = 0;
+                //Remove $ from this.itemPrice string
+                //this.itemPrice = this.itemPrice.substring(1);
 
-                        cartRef.doc(itemName).get().then((doc) => {
-                            //Increase the quantity if item is already in Cart
-                            if (doc.exists) {
-                                quantity = doc.data().quantity + 1;
+                //add item price to total, and format
+                this.itemPrice = parseFloat(this.itemPrice, 10);
+
+                //Look for the document id that corresponds to the user's id
+                userRef.where("UID", "==", userID)
+                    .get()
+                    .then((querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                            userDocID = doc.id;
+                            console.log(userDocID, " => ", doc.data());
+
+                            if (userDocID != '') {
+
+                                var cartRef = userRef.doc(userDocID).collection("Cart");
+                                var quantity = 1; //default quantity if item isn't in Cart
+                                var finalPrice = 0;
+
+                                cartRef.doc(this.itemName).get().then((doc) => {
+                                    //Increase the quantity if item is already in Cart
+                                    if (doc.exists) {
+                                        quantity = doc.data().quantity + 1;
+                                    }
+                                    //Add the item to the Cart
+                                    cartRef.doc(this.itemName).set({
+                                            itemname: this.itemName,
+                                            price: this.itemPrice,
+                                            quantity: quantity
+                                        })
+                                        .then(() => {
+                                            console.log("Document successfully written!");
+                                        })
+                                        .catch((error) => {
+                                            console.error("Error writing document: ", error);
+                                        });
+                                })
+
+                                cartRef.doc('Total').get().then((doc) => {
+                                    //Add to the current total
+                                    if (doc.exists) {
+                                        finalPrice = doc.data().total + this.itemPrice;
+                                    } else {
+                                        finalPrice = this.itemPrice;
+                                    }
+                                    //Write current Total to firestore
+                                    cartRef.doc('Total').set({
+                                            total: finalPrice
+                                        })
+                                        .then(() => {
+                                            console.log("Document successfully written!");
+                                        })
+                                        .catch((error) => {
+                                            console.error("Error writing document: ", error);
+                                        });
+                                })
                             }
-                            //Add the item to the Cart
-                            cartRef.doc(itemName).set({
-                                    itemname: itemName,
-                                    price: itemPrice,
-                                    quantity: quantity
-                                })
-                                .then(() => {
-                                    console.log("Document successfully written!");
-                                })
-                                .catch((error) => {
-                                    console.error("Error writing document: ", error);
-                                });
-                        })
-
-                        cartRef.doc('Total').get().then((doc) => {
-                            //Add to the current total
-                            if (doc.exists) {
-                                finalPrice = doc.data().total + itemPrice;
-                            } else {
-                                finalPrice = itemPrice;
-                            }
-                            //Write current Total to firestore
-                            cartRef.doc('Total').set({
-                                    total: finalPrice
-                                })
-                                .then(() => {
-                                    console.log("Document successfully written!");
-                                })
-                                .catch((error) => {
-                                    console.error("Error writing document: ", error);
-                                });
-                        })
-                    }
-                });
+                        });
+                    })
+                    .catch((error) => {
+                        console.log("Error getting documents: ", error);
+                    });
             })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
-            });
     },
 
     removeItemFromCart: function(item) {
@@ -158,7 +172,7 @@ var Cart = {
 
                         userRef.doc(userDocID).collection("Cart").doc(item).get().then((doc) => {
                             itemName = doc.data().itemname;
-                            itemPrice = doc.data().price;
+                            this.itemPrice = doc.data().price;
 
                             //Remove item from Cart in firestore (since subtracting 1 from 1 would be 0)
                             if (doc.data().quantity == 1) {
@@ -174,7 +188,7 @@ var Cart = {
                                 //Write to Cart with updated quantity
                                 cartRef.doc(item).set({
                                         itemname: itemName,
-                                        price: itemPrice,
+                                        price: this.itemPrice,
                                         quantity: quantity
                                     })
                                     .then(() => {
@@ -189,9 +203,9 @@ var Cart = {
                         userRef.doc(userDocID).collection("Cart").doc('Total').get().then((doc) => {
                             //Subtract from current Total
                             if (doc.exists) {
-                                finalPrice = doc.data().total - itemPrice;
+                                finalPrice = doc.data().total - this.itemPrice;
                             } else {
-                                finalPrice = itemPrice;
+                                finalPrice = this.itemPrice;
                             }
                             //Write current Total to firestore
                             cartRef.doc('Total').set({
@@ -214,8 +228,10 @@ var Cart = {
 };
 
 //Fixed menu with preset indexes
+/*
 Cart.menuItem[0].addEventListener('click', function() { Cart.addItemToCart('0') });
 Cart.menuItem[1].addEventListener('click', function() { Cart.addItemToCart('1') });
 Cart.menuItem[2].addEventListener('click', function() { Cart.addItemToCart('2') });
 Cart.menuItem[3].addEventListener('click', function() { Cart.addItemToCart('3') });
 Cart.menuItem[4].addEventListener('click', function() { Cart.addItemToCart('4') });
+*/
