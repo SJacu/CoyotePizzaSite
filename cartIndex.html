@@ -1,69 +1,11 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< Updated upstream
-<head>
-    <title>Slice of Blue</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navstyle.css">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="footer.css">
-
-    <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>     <!-- needed to use firebase firestore -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  <!-- needed to use firebase authentication -->
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
-            authDomain: "sliceofblue-d8622.firebaseapp.com",
-            projectId: "sliceofblue-d8622",
-            storageBucket: "sliceofblue-d8622.appspot.com",
-            messagingSenderId: "924075037117",
-            appId: "1:924075037117:web:890ec08ecd299d459182d4",
-            measurementId: "G-LCBLS25DNQ"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        const db = firebase.firestore(); //used to initialize our database object we'll be refering to
-        const auth = firebase.auth(); //initializes our authorization sdk
-    </script>
-    <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
-
-    <script src="modalScript.js" defer></script>
-    <script src="login-script.js" defer></script>
-</head>
-
-<body>
-    <!--NAVBAR-->
-    <nav class="navbar background-color-coyoteblue">
-        <ul class="left-aligned-div flex-direction-row">
-            <li id="logo" class="basic-div">
-                <a class="navlink" href="index.html"><img src="images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
-            </li>
-            <li id="menu"><a class="navlink" href="Menus/pizzaPageIndex.html">MENU</a></li>
-            <li id="specials"><a class="navlink" href="Menus/specialsPageIndex.html">SPECIALS</a></li>
-            <li id="rewards"><a class="navlink" href="rewardsPageIndex.html">REWARDS</a></li>
-            <li id="startYourOrder"><a class="navlink">START YOUR ORDER</a></li>
-            <li id="welcome">
-                <a class="navlink"></a>
-            </li>
-            <li id="logout" class="navlink"><a>LOGOUT</a></li>
-            <li id="login" class="navlink"><a>LOGIN</a></li>
-        </ul>
-
-=======
 
 <head>
-    <title>Slice of Blue</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Slice of Blue Cart</title>
+    <link rel="stylesheet" href="cartStyle.css">
     <link rel="stylesheet" href="navstyle.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="footer.css">
 
     <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
@@ -95,8 +37,10 @@
     </script>
     <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
 
+    <!--LOAD ANY NEEDED JAVASCRIPT FILES HERE-->
     <script src="modalScript.js" defer></script>
     <script src="login-script.js" defer></script>
+    <script src="cart.js" defer></script>
 </head>
 
 <body>
@@ -113,47 +57,84 @@
             <li id="welcome">
                 <a class="navlink"></a>
             </li>
-            <li id="editMenu" class="navlink"><a href="AdminEditPage/editMenu.html">Add Menu Item</a></li>
-            <li id="cart" class="navlink"><a href="cartIndex.html">CART</a></li>
             <li id="logout" class="navlink"><a>LOGOUT</a></li>
             <li id="login" class="navlink"><a>LOGIN</a></li>
         </ul>
 
->>>>>>> Stashed changes
         <!--Login/Sign Up Modal-->
         <div class="loginSignup basic-div border-solid flex-direction-column background-color-white">
             <input type="email" id="loginmodalEmail" class="loginEmail" placeholder="EMAIL"><br>
             <input type="password" id="loginmodalPassword" class="loginPassword" placeholder="PASSWORD"><br>
             <div class="loginSignupButtons">
-                <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="index.html">Login</a></div>
-                <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="signup/signup.html">Sign Up</a></div>
+                <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="index.html">Login</a>
+                </div>
+                <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="signup/signup.html">Sign
+                            Up</a></div>
             </div>
         </div>
     </nav>
 
-    <!--Advertisement-->
-    <div class="newAdvertisement basic-div">
-        <div id="advertisement" class="basic-div border-solid"><a>NEW ADVERTISEMENT</a></div>
-    </div>
-
-    <!--Menu Item Headers-->
-    <div class="menuHeaders basic-div background-color-coyoteblue">
-        <div id="pizza" class="basic-div border-solid background-color-white"><a href="Menus/pizzaPageIndex.html">PIZZA</a></div>
-        <div id="sides" class="basic-div border-solid background-color-white"><a href="Menus/sidesPageIndex.html">SIDES</a></div>
-        <div id="desserts" class="basic-div border-solid background-color-white"><a href="Menus/dessertsPageIndex.html">DESSERTS</a></div>
-        <div id="drinks" class="basic-div border-solid background-color-white"><a href="Menus/drinksPageIndex.html">DRINKS</a></div>
-    </div>
-
     <!--Quicklinks-->
     <div class="quicklinks basic-div flex-direction-row">
-        <div id="contactlessDelivery" class="basic-div border-solid"><a>CONTACTLESS DELIVERY ADVERT</a></div>
-        <div id="becomePart" class="basic-div border-solid"><a>BECOME PART OF THE TEAM</a></div>
-<<<<<<< Updated upstream
-        <div id="startOrder" class="basic-div border-solid"><a>START YOUR ORDER</a></div>
-=======
-        <div id="startOrder" class="basic-div border-solid"><a href="cartIndex.html">START YOUR ORDER</a></div>
->>>>>>> Stashed changes
+
+        <div id="myCart" class="basic-div border-solid">
+            <!--
+                <div id="item">
+                    <a>ITEM<a>
+                </div>
+                <div id="totalBox" class="basic-div border-solid">
+                    <a id="totalText">Total: $0</a>
+                </div>
+            -->
+            <div class="cart">
+                <h1>Cart</h1>
+                <div id="totalBox" class="basic-div border-solid total">
+                    <span id="totalText" class="totalPrice">Total: $4.99</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="payment" class="basic-div border-solid">
+            <div id="paymentinfo">
+                <form id="paymentform">
+                    Payment<br><br>
+                    <input type="text" id="cardNumber" placeholder="Card Number"><br><br>
+                    <input type="text" id="cardName" placeholder="Card Name"><br><br>
+                    <input type="text" id="expiration" placeholder="Expiration date (MM/YY)"><br><br>
+                    <input type="text" id="securityCode" placeholder="Security Code"><br><br>
+                    <div id="update"><a>Update</a></div>
+                    Billing Address<br><br>
+                    <input type="text" id="firstName" placeholder="First name"><br><br>
+                    <input type="text" id="lastName" placeholder="Last name"><br><br>
+                    <input type="text" id="address" placeholder="Address"><br><br>
+                    <input type="text" id="city" placeholder="City"><br><br>
+                    <input type="text" id="zipcode" placeholder="Zip Code"><br><br>
+                    <div id="update"><a>Update</a></div>
+                </form>
+            </div>
+        </div>
     </div>
+
+    <!--PAYMENT FORM-->
+    <!--
+        <div id="paymentinfo">
+            <form id="paymentform">
+                Payment<br><br>
+                <input type="text" id="cardNumber" placeholder="Card Number"><br><br>
+                <input type="text" id="cardName" placeholder="Card Name"><br><br>
+                <input type="text" id="expiration" placeholder="Expiration date (MM/YY)"><br><br>
+                <input type="text" id="securityCode" placeholder="Security Code"><br><br>
+                <div id="update"><a>Update</a></div>
+                Billing Address<br><br>
+                <input type="text" id="firstName" placeholder="First name"><br><br>
+                <input type="text" id="lastName" placeholder="Last name"><br><br>
+                <input type="text" id="address" placeholder="Address"><br><br>
+                <input type="text" id="city" placeholder="City"><br><br>
+                <input type="text" id="zipcode" placeholder="Zip Code"><br><br>
+                <div id="update"><a>Update</a></div>
+            </form>
+        </div>
+    -->
 
     <!--Join Newsletter-->
     <div class="joinNewsletter basic-div background-color-coyoteblue flex-direction-column">
@@ -167,28 +148,13 @@
             <!--Our Company Section-->
             <div class="ourCompanySection basic-div flex-direction-column">
                 <div id="ourCompany">OUR COMPANY</div>
-<<<<<<< Updated upstream
-                <div id="about"><a>About</a></div>
-=======
                 <div id="about"><a class="visited-color-black" href="AboutUsPageIndex.html">About</a></div>
->>>>>>> Stashed changes
                 <div id="contactless"><a>Contactless Delivery</a></div>
             </div>
 
             <!--Our Pizza Section-->
             <div class="ourPizzaSection basic-div flex-direction-column">
                 <div id="ourPizza">OUR PIZZA</div>
-<<<<<<< Updated upstream
-                <div id="pizzaMenu"><a>Pizza Menu</a></div>
-                <div id="nutritionInfo"><a>Nutrition Info</a></div>
-                <div id="allergen"><a>Allergen Info</a></div>
-
-            </div>
-            <!--Help Section-->
-            <div class="helpSection basic-div flex-direction-column">
-                <div id="help">HELP</div>
-                <div id="contactUs"><a>Contact Us</a></div>
-=======
                 <div id="pizzaMenu"><a class="visited-color-black" href="Menus/pizzaPageIndex.html">Pizza Menu</a></div>
             </div>
 
@@ -196,7 +162,6 @@
             <div class="helpSection basic-div flex-direction-column">
                 <div id="help">HELP</div>
                 <div id="contactUs"><a class="visited-color-black" href="AboutUsPageIndex.html">Contact Us</a></div>
->>>>>>> Stashed changes
                 <div id="faq"><a>FAQ</a></div>
             </div>
         </div>
@@ -209,8 +174,5 @@
         </div>
     </footer>
 </body>
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 </html>

@@ -10,8 +10,8 @@
     .navbar {
         border-bottom: solid black;
     }
-
     /*Menu Item Headers*/
+    
     .menuNav {
         border-bottom: solid black;
         position: fixed;
@@ -23,8 +23,8 @@
         border-bottom-right-radius: 3cm;
         align-items: center;
     }
-
     /*Quicklinks*/
+    
     .quicklinks {
         padding-top: 20vh;
         background-color: white;
@@ -34,4 +34,12 @@
         margin: 50px auto 50px auto;
         height: 200px;
         min-width: 250px;
+    }
+    
+    .menuPizza,
+    .menuDrinks,
+    .menuSides,
+    .menuDesserts {
+        flex-wrap: wrap;
+        width: 75%;
     }
