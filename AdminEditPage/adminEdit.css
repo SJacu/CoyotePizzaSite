@@ -1,0 +1,11 @@
+#formSubmitButton {
+    margin-left: 150px;
+    width: 150px;
+    height: 25px;
+}
+
+#editForm {
+    padding: 50px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
