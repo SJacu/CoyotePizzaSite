@@ -55,13 +55,13 @@ var Menu = {
                 querySnapshot.forEach((doc) => {
                     console.log(doc.data())
                         //Add HTML Element for each menu item w/ add button
-                    menuDisplay.innerHTML += `<span>` +
+                    menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
                         doc.data().name + " " + "$" +
                         doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">+</button>` +
+                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
                         `</span>` +
                         `<div>` + doc.data().description + `</div>` +
-                        `<br><br>`;
+                        `</div></div><br><br>`;
                 });
             })
     }

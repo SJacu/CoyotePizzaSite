@@ -4,6 +4,7 @@ var userRef = firestore.collection("users");
 
 /******* USE var userID = firebase.auth().currentUser.uid; *******/
 var user = firebase.auth().currentUser;
+var userID = '';
 //var userID = '';
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -11,6 +12,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log(user);
         console.log(user.uid);
         updateCart(user.uid);
+        userID = user.uid;
 
     } else {
         // No user is signed in.
@@ -29,45 +31,47 @@ var totalPrice = document.querySelector(".totalPrice");
 function updateCart(userID) {
 
     itemInCart = '<h1>Cart</h1>';
-
-    //Look for the document id that corresponds to the user's id
-    userRef.where("UID", "==", userID)
-        .onSnapshot((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                userDocID = doc.id;
-                console.log(userDocID, " => ", doc.data());
-            });
-
-            //Find the Cart collection, read it, and display it OR add a Cart if it doesn't exist
-            userRef.doc(userDocID).collection("Cart")
-                .onSnapshot((querySnapshot) => {
-
-                    itemInCart = '<h1>Cart</h1>';
-                    cartDisplay.innerHTML = itemInCart;
-
-                    querySnapshot.forEach((doc) => {
-                        if (doc.id != 'Total') {
-                            //Insert HTML element displaying current Cart data
-                            itemInCart += `<span>` +
-                                doc.data().itemname + " " +
-                                doc.data().price + " " +
-                                doc.data().quantity +
-                                `<span>` + " " +
-                                `<button type="button" class="itemButton" onclick="Cart.removeItemFromCart('` + doc.data().itemname + `')">-</button>` +
-                                `<br><br>`
-                            cartDisplay.innerHTML = itemInCart;
-                        } else {
-                            //Insert HTML element displaying current Total
-                            totalAmount = doc.data().total;
-                            if (totalAmount <= 0)
-                                totalAmount = 0
-
-                            cartDisplay.innerHTML += `<div class="total"><span class="totalPrice">` +
-                                `Total: $` + totalAmount.toFixed(2) + `</span></div>`;
-                        }
-                    })
+    if (cartDisplay) {
+        //Look for the document id that corresponds to the user's id
+        userRef.where("UID", "==", userID)
+            .onSnapshot((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    userDocID = doc.id;
+                    console.log(userDocID, " => ", doc.data());
                 });
-        })
+
+                //Find the Cart collection, read it, and display it OR add a Cart if it doesn't exist
+                userRef.doc(userDocID).collection("Cart")
+                    .onSnapshot((querySnapshot) => {
+
+                        itemInCart = '<h1>Cart</h1>';
+                        cartDisplay.innerHTML = itemInCart;
+
+                        querySnapshot.forEach((doc) => {
+                            if (doc.id != 'Total') {
+                                console.log(doc.data());
+                                //Insert HTML element displaying current Cart data
+                                itemInCart += `<span>` +
+                                    doc.data().itemname + " " +
+                                    doc.data().price + " " +
+                                    doc.data().quantity +
+                                    `<span>` + " " +
+                                    `<button type="button" class="itemButton" onclick="Cart.removeItemFromCart('` + doc.data().itemname + `')">&nbsp;-&nbsp;</button>` +
+                                    `<br><br>`
+                                cartDisplay.innerHTML = itemInCart;
+                            } else {
+                                //Insert HTML element displaying current Total
+                                totalAmount = doc.data().total;
+                                if (totalAmount <= 0)
+                                    totalAmount = 0
+
+                                cartDisplay.innerHTML += `<div class="total"><span class="totalPrice">` +
+                                    `Total: $` + totalAmount.toFixed(2) + `</span></div>`;
+                            }
+                        })
+                    });
+            })
+    }
 }
 
 //Automatically call a cart update whenever a change in the Cart data occurs
@@ -82,7 +86,7 @@ var Cart = {
 
     addItemToCart: function(itemname, itemtype) {
 
-        var userID = "tempkey";
+        //var userID = "tempkey";
         var userDocID = '';
 
         //Get specific menu item from list
@@ -122,6 +126,7 @@ var Cart = {
                                         })
                                         .then(() => {
                                             console.log("Document successfully written!");
+                                            alert(this.itemName + " added to Cart");
                                         })
                                         .catch((error) => {
                                             console.error("Error writing document: ", error);
