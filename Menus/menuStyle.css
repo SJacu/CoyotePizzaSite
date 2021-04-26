@@ -1,37 +1,64 @@
-    /*Menu Item Headers*/
-    
-    #menuHeaders {
-        padding: 20px 0px 0px 110px;
-        top: 60px;
-        z-index: 1;
-        height: 8vh;
-    }
-    
-    .navbar {
-        border-bottom: solid black;
-    }
+/*Menu Item Headers*/
 
-    /*Menu Item Headers*/
-    .menuNav {
-        border-bottom: solid black;
-        position: fixed;
-        width: 30%;
-        top: 90px;
-        height: 40px;
-        margin-left: right;
-        z-index: 1;
-        border-bottom-right-radius: 3cm;
-        align-items: center;
-    }
+#menuHeaders {
+    padding: 20px 0px 0px 110px;
+    top: 60px;
+    z-index: 1;
+    height: 8vh;
+}
 
-    /*Quicklinks*/
-    .quicklinks {
-        padding-top: 20vh;
-        background-color: white;
-    }
-    
-    .boxes {
-        margin: 50px auto 50px auto;
-        height: 200px;
-        min-width: 250px;
-    }
+.navbar {
+    border-bottom: solid black;
+}
+
+
+/*Menu Item Headers*/
+
+.menuNav {
+    border-bottom: solid black;
+    position: fixed;
+    width: 30%;
+    top: 90px;
+    height: 40px;
+    margin-left: right;
+    z-index: 1;
+    border-bottom-right-radius: 3cm;
+    align-items: center;
+}
+
+
+/*Quicklinks*/
+
+.quicklinks {
+    padding-top: 20vh;
+    background-color: white;
+}
+
+.boxes {
+    margin: 50px auto 50px auto;
+    height: 200px;
+    min-width: 250px;
+}
+
+.menuPizza,
+.menuDrinks,
+.menuSides,
+.menuDesserts {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.menuItem {
+    width: 95%;
+    text-align: center;
+}
+
+.menuBox {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    min-height: 450px;
+    flex-direction: column;
+}

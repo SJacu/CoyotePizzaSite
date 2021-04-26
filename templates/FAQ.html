@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>Slice of Blue</title>
@@ -7,16 +6,14 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="navstyle.css">
         <link rel="stylesheet" href="footer.css">
-        <link rel="stylesheet" href="aboutus.css">
+
         <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-        <!-- needed to use firebase firestore -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-        <!-- needed to use firebase authentication -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>     <!-- needed to use firebase firestore -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  <!-- needed to use firebase authentication -->
         <script>
             // Your web app's Firebase configuration
             // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -38,8 +35,8 @@
         <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
 
         <!--LOAD ANY NEEDED JAVASCRIPT FILES HERE-->
-        <script src="modalScript.js" defer></script>
-        <script src="login-script.js" defer></script>
+        <script src="../modalScript.js" defer></script>
+        <script src="../login-script.js" defer></script>
     </head>
 
     <body>
@@ -47,12 +44,12 @@
         <nav class="navbar background-color-coyoteblue">
             <ul class="left-aligned-div flex-direction-row">
                 <li id="logo" class="basic-div">
-                    <a class="navlink" href="index.html"><img src="images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
+                    <a class="navlink" href="../index.html"><img src="../images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
                 </li>
-                <li id="menu"><a class="navlink" href="Menus/pizzaPageIndex.html">MENU</a></li>
-                <li id="specials"><a class="navlink" href="Menus/specialsPageIndex.html">SPECIALS</a></li>
-                <li id="rewards"><a class="navlink" href="rewardsPageIndex.html">REWARDS</a></li>
-                <li id="cart" class="navlink"><a class="color-white" href="cartIndex.html">CART</a></li>
+                <li id="menu"><a class="navlink" href="../Menus/pizzaPageIndex.html">MENU</a></li>
+                <li id="specials"><a class="navlink" href="../Menus/specialsPageIndex.html">SPECIALS</a></li>
+                <li id="rewards"><a class="navlink" href="../rewardsPageIndex.html">REWARDS</a></li>
+                <li id="cart" class="navlink"><a class="color-white" href="../cartIndex.html">CART</a></li>
                 <li id="welcome" class="color-white">
                     <a class="navlink"></a>
                 </li>
@@ -74,44 +71,47 @@
 
         <!--THIS IS WHERE YOU CAN INSERT YOUR PAGE-SPECIFIC CODE-->
         <!--NOTE THAT YOU MAY NEED TO FIX HREFs TO REDIRECT TO PROPER PAGES-->
-        <br><br><br><br><br><br><br><br>
-        <div class=" aboutusWrapper basic-div flex-direction-column">
-            <div class="AboutUs">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;Here at Slice of Blue, we dedicate our time to using the best and freshest ingredients. We waste no time or food when using our vegetables. Our pizza family is hungry for perfection as we started this company more than
-                    5+ weeks ago. And we are driven to be the best at making innovative new products and recipes.</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class= "faqWrapper basic-div flex-direction-column">
+            <div class="FAQ">
+                <center><p>Frequently Asked Questions</p></center>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; Does this pizza come in a gluten-free veganized pizza?   Yes, we will gladly give you a cardboard box full of air for you.</p>
                 <br>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;Quality is our story. Our pizzas represent the glory and success of your enjoyment. Our first location in San Bernardino, CA, solidified our foundations for success. It’s grown from a couple running ideas to a full
-                    fledged webpage.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; Will this pizza give me cancer?   <em>No</em>, it wont on the first bite, but the second is not my fault.</p>
+                <br> 
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; Can I return this pizza?      <em>No</em>, This isn't K-Mart, you either eat it or give it to your local powerplant. 
+                                            Either way, both are getting a hearty meal.</p>
                 <br>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;We don’t use cheap or dirty processed ingredients. Whether it’s our signature sauce, toppings, our original fresh dough, or even our circle box, we invest in the finest ingredients to ensure that you have a pizza that
-                    looks more expensive than your car.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; Is this safe for human consumption?  What do <i>you</i> think? If you're asking, you aren't eating it right.</p> 
                 <br>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;For you, it's more than a pizza, it’s your prized possession. It’s about you cherishing your pizza like a god. We want you to believe in the religion of Blue. It’s our goal to make sure you either love it, or pray to
-                    it. It will be the best for any occasion.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; If you have made it this far, Congratz!</p>
+                <br> 
             </div>
         </div>
-        <br><br><br><br><br>
+        <br><br><br><br><br><br>
         <footer>
             <!--General Information-->
             <div class="generalInfo basic-div flex-direction-row background-color-coyoteblue">
                 <!--Our Company Section-->
                 <div class="ourCompanySection basic-div flex-direction-column">
                     <div id="ourCompany">OUR COMPANY</div>
-                    <div id="about"><a class="visited-color-black" href="AboutUsPageIndex.html">About</a></div>
+                    <div id="about"><a class="visited-color-black" href="../AboutUsPageIndex.html">About</a></div>
                     <div id="contactless"><a>Contactless Delivery</a></div>
                 </div>
 
                 <!--Our Pizza Section-->
                 <div class="ourPizzaSection basic-div flex-direction-column">
                     <div id="ourPizza">OUR PIZZA</div>
-                    <div id="pizzaMenu"><a class="visited-color-black" href="Menus/pizzaPageIndex.html">Pizza Menu</a></div>
+                    <div id="pizzaMenu"><a class="visited-color-black" href="../Menus/pizzaPageIndex.html">Pizza Menu</a></div>
+                    <div id="nutritionInfo"><a>Nutrition Info</a></div>
+                    <div id="allergen"><a>Allergen Info</a></div>
                 </div>
 
                 <!--Help Section-->
                 <div class="helpSection basic-div flex-direction-column">
                     <div id="help">HELP</div>
-                    <div id="contactUs"><a class="color-black visited-color-black" href="AboutUsPageIndex.html">Contact Us</a></div>
-                    <div id="faq"><a class="color-black visited-color-black" href="templates/FAQ.html">FAQ</a></div>
+                    <div id="contactUs"><a class="visited-color-black" href="../AboutUsPageIndex.html">Contact Us</a></div>
+                    <div id="faq"><a class="visited-color-black" href="../FAQ.html">FAQ</a></div>
                 </div>
             </div>
 

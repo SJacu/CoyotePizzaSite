@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Slice of Blue</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="navstyle.css">
-        <link rel="stylesheet" href="home.css">
-        <link rel="stylesheet" href="footer.css">
 
-        <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-        <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>     <!-- needed to use firebase firestore -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  <!-- needed to use firebase authentication -->
-        <script>
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            var firebaseConfig = {
-                apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
-                authDomain: "sliceofblue-d8622.firebaseapp.com",
-                projectId: "sliceofblue-d8622",
-                storageBucket: "sliceofblue-d8622.appspot.com",
-                messagingSenderId: "924075037117",
-                appId: "1:924075037117:web:890ec08ecd299d459182d4",
-                measurementId: "G-LCBLS25DNQ"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-            const db = firebase.firestore(); //used to initialize our database object we'll be refering to
-            const auth = firebase.auth(); //initializes our authorization sdk
-        </script>
-        <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
+<head>
+    <title>Slice of Blue</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navstyle.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <!-- needed to use firebase firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <!-- needed to use firebase authentication -->
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
+            authDomain: "sliceofblue-d8622.firebaseapp.com",
+            projectId: "sliceofblue-d8622",
+            storageBucket: "sliceofblue-d8622.appspot.com",
+            messagingSenderId: "924075037117",
+            appId: "1:924075037117:web:890ec08ecd299d459182d4",
+            measurementId: "G-LCBLS25DNQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore(); //used to initialize our database object we'll be refering to
+        const auth = firebase.auth(); //initializes our authorization sdk
+    </script>
+    <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
 
         <script src="modalScript.js" defer></script>
         <script src="login-script.js" defer></script>
+        <script src="news-letter-script.js" defer></script>
     </head>
 
-    <body>
-        <!--NAVBAR-->
-        <nav class="navbar background-color-coyoteblue">
-            <ul class="left-aligned-div flex-direction-row">
-                <li id="logo" class="basic-div">
-                    <a class="navlink" href="index.html"><img src="images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
-                </li>
-                <li id="menu"><a class="navlink" href="Menus/pizzaPageIndex.html">MENU</a></li>
-                <li id="specials"><a class="navlink" href="Menus/specialsPageIndex.html">SPECIALS</a></li>
-                <li id="rewards"><a class="navlink" href="rewardsPageIndex.html">REWARDS</a></li>
-                <li id="startYourOrder"><a class="navlink" href="cartIndex.html">START YOUR ORDER</a></li>
-                <li id="welcome">
-                    <a class="navlink"></a>
-                </li>
-                <li id="editMenu" class="navlink"><a href="AdminEditPage/editMenu.html">Add Menu Item</a></li>
-                <li id="logout" class="navlink"><a>LOGOUT</a></li>
-                <li id="login" class="navlink"><a>LOGIN</a></li>
-            </ul>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar background-color-coyoteblue">
+        <ul class="left-aligned-div flex-direction-row">
+            <li id="logo" class="basic-div">
+                <a class="navlink" href="index.html"><img src="images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
+            </li>
+            <li id="menu"><a class="navlink" href="Menus/pizzaPageIndex.html">MENU</a></li>
+            <li id="specials"><a class="navlink" href="Menus/specialsPageIndex.html">SPECIALS</a></li>
+            <li id="rewards"><a class="navlink" href="rewardsPageIndex.html">REWARDS</a></li>
+            <li id="cart" class="navlink"><a class="color-white" href="cartIndex.html">CART</a></li>
+            <li id="welcome" class="color-white"></li>
+            <li id="logout" class="navlink"><a>LOGOUT</a></li>
+            <li id="login" class="navlink"><a>LOGIN</a></li>
+        </ul>
 
-            <!--Login/Sign Up Modal-->
-            <div class="loginSignup basic-div border-solid flex-direction-column background-color-white">
-                <input type="email" id="loginmodalEmail" class="loginEmail" placeholder="EMAIL"><br>
-                <input type="password" id="loginmodalPassword" class="loginPassword" placeholder="PASSWORD"><br>
-                <div class="loginSignupButtons">
-                    <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="index.html">Login</a></div>
-                    <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="signup/signup.html">Sign Up</a></div>
-                </div>
+        <!--Login/Sign Up Modal-->
+        <div class="loginSignup basic-div border-solid flex-direction-column background-color-white">
+            <input type="email" id="loginmodalEmail" class="loginEmail" placeholder="EMAIL"><br>
+            <input type="password" id="loginmodalPassword" class="loginPassword" placeholder="PASSWORD"><br>
+            <div class="loginSignupButtons">
+                <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="index.html">Login</a></div>
+                <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="signup/signup.html">Sign Up</a></div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
         <!--Advertisement-->
         <div class="newAdvertisement basic-div">
@@ -75,10 +76,10 @@
 
         <!--Menu Item Headers-->
         <div class="menuHeaders basic-div background-color-coyoteblue">
-            <div id="pizza" class="basic-div border-solid background-color-white"><a href="Menus/pizzaPageIndex.html">PIZZA</a></div>
-            <div id="sides" class="basic-div border-solid background-color-white"><a href="Menus/sidesPageIndex.html">SIDES</a></div>
-            <div id="desserts" class="basic-div border-solid background-color-white"><a href="Menus/dessertsPageIndex.html">DESSERTS</a></div>
-            <div id="drinks" class="basic-div border-solid background-color-white"><a href="Menus/drinksPageIndex.html">DRINKS</a></div>
+            <div id="pizza" class="basic-div border-solid background-color-white"><a class="color-black visited-color-black" href="Menus/pizzaPageIndex.html">PIZZA</a></div>
+            <div id="sides" class="basic-div border-solid background-color-white"><a class="color-black visited-color-black" href="Menus/sidesPageIndex.html">SIDES</a></div>
+            <div id="desserts" class="basic-div border-solid background-color-white"><a class="color-black visited-color-black" href="Menus/dessertsPageIndex.html">DESSERTS</a></div>
+            <div id="drinks" class="basic-div border-solid background-color-white"><a class="color-black visited-color-black" href="Menus/drinksPageIndex.html">DRINKS</a></div>
         </div>
 
         <!--Quicklinks-->
@@ -92,6 +93,8 @@
         <div class="joinNewsletter basic-div background-color-coyoteblue flex-direction-column">
             <div id="newsletterText" class="color-white">JOIN OUR NEWSLETTER!</div>
             <input type="email" id="newsletterEmail" class="input" placeholder="EMAIL">
+            <br>
+            <div id="newsletterSubmitButton" class="color-white"><a>SUBMIT</a></div>
         </div>
 
         <footer>
@@ -114,7 +117,7 @@
                 <div class="helpSection basic-div flex-direction-column">
                     <div id="help">HELP</div>
                     <div id="contactUs"><a class="visited-color-black" href="AboutUsPageIndex.html">Contact Us</a></div>
-                    <div id="faq"><a>FAQ</a></div>
+                    <div id="faq"><a class="color-black visited-color-black" href="templates/FAQ.html">FAQ</a></div>
                 </div>
             </div>
 
@@ -125,6 +128,6 @@
                 Certain toppings may be excluded from special offer pizzas or require additional charge. Limited delivery area. Delivery fee may apply and may not be subject to discount.
                 Customer responsible for all applicable taxes.
             </div>
-        </footer>
-    </body>
+    </footer>
+</body>
 </html>

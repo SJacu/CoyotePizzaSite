@@ -11,6 +11,7 @@ const Login = document.querySelector("#loginmodal");
 const UserDisplay = document.querySelector("#welcome");
 const NavLogin = document.querySelector("#login");
 const NavLogout = document.querySelector("#logout");
+const EditItem = document.querySelector("#editMenu");
 
 //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 function hideLoginSignup()
@@ -34,14 +35,28 @@ auth.onAuthStateChanged(user =>
             querySnapshot.forEach((doc) =>
             {
                 // doc.data() is never undefined for query doc snapshots
-                UserDisplay.textContent = "Welcome, " + doc.data().username;
+                let newA = document.createElement("a");
+                newA.className = "navlink";
+                newA.href = "profile.html";
+                newA.textContent = "Welcome, " + doc.data().username;
+                UserDisplay.appendChild(newA);
+                if(doc.data().admin == false)
+                {
+                    if(EditItem)
+                    {
+                        EditItem.style.display = "none";
+                    }
+                }
             });
         })
         .catch((error) => {
             console.log("Error getting documents: ", error);
         });
-        UserDisplay.textContent = "Welcome, " + user.email;
     }else{
+        if(EditItem)
+        {
+            EditItem.style.display = "none";
+        }
         hideLoginSignup();
         //user is logged out
         console.log("There is no user logged in");

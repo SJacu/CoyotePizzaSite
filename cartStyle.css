@@ -3,10 +3,9 @@
 .quicklinks {
     min-height: 100vh;
     padding: 20px;
-    
 }
 
-#myCart{
+#myCart {
     width: 600px;
     min-height: 70vh;
     margin: 20px;
@@ -43,8 +42,8 @@
 }
 
 
-
 /*Sign Up Form*/
+
 #paymentinfo {
     margin-left: 10%;
     height: 65vh;
@@ -59,7 +58,7 @@
 #lastName,
 #address,
 #city,
-#zipcode{
+#zipcode {
     height: 35px;
     width: 270px;
 }
@@ -71,7 +70,6 @@
 #paymentinfoLogin {
     padding-left: 2080px;
 }
-
 
 #update:hover {
     text-shadow: 2px 2px 4px rgb(0, 114, 198);
