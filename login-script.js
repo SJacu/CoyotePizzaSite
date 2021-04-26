@@ -40,7 +40,6 @@ auth.onAuthStateChanged(user =>
         .catch((error) => {
             console.log("Error getting documents: ", error);
         });
-        UserDisplay.textContent = "Welcome, " + user.email;
     }else{
         hideLoginSignup();
         //user is logged out
