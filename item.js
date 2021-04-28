@@ -50,20 +50,65 @@ var Menu = {
         //Get all menu items from specific item type
         menuDisplay = document.querySelector(".menu" + itemtype)
         console.log(".menu" + itemtype);
-        itemRef.collection(itemtype).get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    console.log(doc.data())
-                        //Add HTML Element for each menu item w/ add button
-                    menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
-                        doc.data().name + " " + "$" +
-                        doc.data().price + " " +
-                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
-                        `</span>` +
-                        `<div>` + doc.data().description + `</div>` +
-                        `</div></div><br><br>`;
-                });
-            })
+        auth.onAuthStateChanged(user => {
+            if (!user) {
+                itemRef.collection(itemtype).get()
+                    .then((querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                            //Add HTML Element for each menu item w/ add button
+                            menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
+                                doc.data().name + " " + "$" +
+                                doc.data().price + " " +
+                                `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
+                                `</span>` +
+                                `<div>` + doc.data().description + `</div>` +
+                                `</div></div><br><br>`;
+                        });
+                    })
+            }
+            //Check if the user is an admin
+            if (user) {
+                db.collection("users").where("UID", "==", user.uid).get().then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        admin = doc.data().admin;
+                    });
+                })
+
+                itemRef.collection(itemtype).get()
+                    .then((querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                            //Add HTML Element for each menu item w/ add button
+                            if (admin) {
+                                menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
+                                    doc.data().name + " " + "$" +
+                                    doc.data().price + " " +
+                                    `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
+                                    `<br><button type="button" class="itemButton" onclick="Menu.removeMenuItem('` + doc.data().name + `', '` + doc.data().type + `')">REMOVE ITEM</button>` +
+                                    `</span>` +
+                                    `<div>` + doc.data().description + `</div>` +
+                                    `</div></div><br><br>`;
+                            } else {
+                                menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
+                                    doc.data().name + " " + "$" +
+                                    doc.data().price + " " +
+                                    `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
+                                    `</span>` +
+                                    `<div>` + doc.data().description + `</div>` +
+                                    `</div></div><br><br>`;
+                            }
+                        });
+                    })
+            }
+        });
+    },
+
+    removeMenuItem(item, itemType) {
+        itemRef.collection(itemType).doc(item).delete().then(() => {
+            console.log("Document successfully deleted!");
+            location.reload();
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
     }
 }
 

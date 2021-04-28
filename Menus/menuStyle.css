@@ -62,3 +62,7 @@
     min-height: 450px;
     flex-direction: column;
 }
+
+#editMenu {
+    display: none;
+}
