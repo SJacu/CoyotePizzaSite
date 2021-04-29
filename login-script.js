@@ -14,39 +14,49 @@ const NavLogout = document.querySelector("#logout");
 const EditItem = document.querySelector("#editMenu");
 
 //REEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-function hideLoginSignup() {
+function hideLoginSignup()
+{
     document.querySelector(".loginSignup").style.display = 'none';
 }
 
 //listen for auth status changes, returns user if user is considered "logged in"
-auth.onAuthStateChanged(user => {
-    if (user) {
+auth.onAuthStateChanged(user =>
+{
+    if(user)
+    {
         hideLoginSignup();
         //user is logged in
         console.log("There is a user logged in");
         NavLogin.style.display = "none";
 
         //firestore looks through users documents untill it finds a document with a matching UID as the user logged in
-        db.collection("users").where("UID", "==", user.uid).get().then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    // doc.data() is never undefined for query doc snapshots
-                    let newA = document.createElement("a");
-                    newA.className = "navlink";
-                    newA.href = "profile.html";
-                    newA.textContent = "Welcome, " + doc.data().username;
-                    UserDisplay.appendChild(newA);
-                    if (doc.data().admin == true) {
-                        if (EditItem) {
-                            EditItem.style.display = "inline-block";
-                        }
+        db.collection("users").where("UID", "==", user.uid).get().then((querySnapshot) =>
+        {
+            querySnapshot.forEach((doc) =>
+            {
+                // doc.data() is never undefined for query doc snapshots
+                let newA = document.createElement("a");
+                newA.className = "navlink";
+                newA.href = document.location.origin + "/Profile/profile.html";
+                newA.textContent = "Welcome, " + doc.data().username;
+                UserDisplay.appendChild(newA);
+                if (doc.data().admin == true)
+                {
+                    if (EditItem)
+                    {
+                        EditItem.style.display = "inline-block";
                     }
-                });
-            })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
+                }
             });
-    } else {
-        if (EditItem) {
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+    }
+    else
+    {
+        if (EditItem)
+        {
             EditItem.style.display = "none";
         }
         hideLoginSignup();
@@ -69,15 +79,18 @@ logout.addEventListener("click", (e) => {
 });
 
 //function to log in user
-function Log_In() {
+function Log_In()
+{
     //can use squarebracket notation for a form object
     const email = LoginEmail.value;
     const password = LoginPassword.value;
 
     //if both forms have data inside of them
-    if ((email != "") && (password != "")) {
+    if ((email != "") && (password != ""))
+    {
         //basic sign-in method
-        auth.signInWithEmailAndPassword(email, password).then(cred => {
+        auth.signInWithEmailAndPassword(email, password).then(cred =>
+        {
             //clears information forms
             LoginEmail.value = "";
             LoginPassword.value = "";
@@ -85,13 +98,16 @@ function Log_In() {
             hideLoginSignup();
             window.location.href = window.location.pathname;
         });
-    } else {
+    }
+    else
+    {
         //if one of the forms are empty
         alert("Please fill in all login information!");
     }
 }
 
-Login.addEventListener("click", (e) => {
+Login.addEventListener("click", (e) =>
+{
     e.preventDefault();
     Log_In();
 });

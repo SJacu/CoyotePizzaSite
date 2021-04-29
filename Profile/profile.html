@@ -2,16 +2,17 @@
 <html>
 
 <head>
-    <title>Slice of Blue Menu</title>
-    <link href="menuStyle.css" rel="stylesheet">
+    <title>Slice of Blue - Profile </title>
+    <link rel="stylesheet" href="profileStyle.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../navstyle.css">
+    <link rel="stylesheet" href="../home.css">
     <link rel="stylesheet" href="../footer.css">
+
 
     <!--!!!!!!!THIS IS THE FIREBASE HEADER, THIS SHOULD BE ON EVERY PAGE!!!!!!!-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-
     <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
@@ -37,9 +38,11 @@
         const auth = firebase.auth(); //initializes our authorization sdk
     </script>
     <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
-    
+
     <script src="../modalScript.js" defer></script>
     <script src="../login-script.js" defer></script>
+    <script src="profile.js" defer></script>
+    <script src="../news-letter-script.js" defer></script>
 </head>
 
 <body>
@@ -49,12 +52,12 @@
             <li id="logo" class="basic-div">
                 <a class="navlink" href="../index.html"><img src="../images/Slice of Blue Logo.png" heigth="150px" width="150px"></a>
             </li>
-            <li id="menu"><a class="navlink" href="pizzaPageIndex.html">MENU</a></li>
-            <li id="specials"><a class="navlink" href="specialsPageIndex.html">SPECIALS</a></li>
+            <li id="menu"><a class="navlink" href="../Menus/pizzaPageIndex.html">MENU</a></li>
+            <li id="specials"><a class="navlink" href="../Menus/specialsPageIndex.html">SPECIALS</a></li>
             <li id="rewards"><a class="navlink" href="../rewardsPageIndex.html">REWARDS</a></li>
             <li id="cart" class="navlink"><a class="color-white" href="../cartIndex.html">CART</a></li>
             <li id="welcome" class="color-white">
-                <a class="navlink"></a>
+                <a class="navlink" href="profile.html"></a>
             </li>
             <li id="logout" class="navlink"><a>LOGOUT</a></li>
             <li id="login" class="navlink"><a>LOGIN</a></li>
@@ -65,27 +68,41 @@
             <input type="email" id="loginmodalEmail" class="loginEmail" placeholder="EMAIL"><br>
             <input type="password" id="loginmodalPassword" class="loginPassword" placeholder="PASSWORD"><br>
             <div class="loginSignupButtons">
-                <div id="loginmodal"><a class="hover-color-coyoteblue color-black visited-color-black" href="index.html">Login</a></div>
-                <div id="signup"><a class="hover-color-coyoteblue color-black visited-color-black" href="signup/signup.html">Sign Up</a></div>
+                <div id="loginmodal"><a class="hover-color-coyoteblue visited-color-black" href="../index.html">Login</a></div>
+                <div id="signup"><a class="hover-color-coyoteblue visited-color-black" href="../signup/signup.html">Sign Up</a></div>
             </div>
         </div>
     </nav>
 
 
-
-    <div class="quicklinks">
-        <div class="basic-div">
-            <div class="boxes basic-div border-solid"><img src= "../images/specials/drink with pizza and wings.jpg" heigth="550px" width="300px"></div>
-            <div class="boxes basic-div border-solid"><img src= "../images/specials/soda with pizza and brownies.jpg" heigth="550px" width="300px"></div>
-            <div class="boxes basic-div border-solid"><img src= "../images/specials/soda with pizza and cheese sticks.jpg" heigth="550px" width="300px"></div>
+    <!--Info-->
+    <div class="info basic-div flex-direction-row">
+        <div id="signupform" class="basic-div border-solid"> 
+            Total Rewards:<br><br><br>
+            Email:<br><br>
+            Card Payment:<br><br>
+            Phone:<br><br>
+            Billing Address:
+            <div id="edit">
+                <a>Edit</a>
+            </div>
+            <br><br>
         </div>
+        <div id="box" class="basic-div border-solid"></a></div>
+    </div>
+
+    <!--Join Newsletter-->
+    <div class="joinNewsletter basic-div background-color-coyoteblue flex-direction-column">
+        <div id="newsletterText" class="color-white">JOIN OUR NEWSLETTER!</div>
+        <input type="email" id="newsletterEmail" class="input" placeholder="EMAIL">
+        <br>
+        <div id="newsletterSubmitButton" class="color-white"><a>SUBMIT</a></div>
     </div>
 
 
     <footer>
         <!--General Information-->
-        <div class="generalInfo background-color-coyoteblue basic-div flex-direction-row">
-            <!--Our Company Section-->
+        <div class="generalInfo basic-div flex-direction-row">
             <!--Our Company Section-->
             <div class="ourCompanySection basic-div flex-direction-column ">
                 <div id="ourCompany ">OUR COMPANY</div>
@@ -108,10 +125,14 @@
         </div>
 
         <!--Slice of Blue Description-->
-        <div class="description background-color-coyoteblue">
-            Offers good for a limited time at "Slice of Blue" located at California State University, San Bernardino! Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks are registered Trademarks of PepsiCo, Inc. Some offers
-            require the purchase of multiple pizzas. Some offers may be available online only. Certain toppings may be excluded from special offer pizzas or require additional charge. Limited delivery area. Delivery fee may apply and may not be subject
-            to discount. Customer responsible for all applicable taxes.</div>
+        <div class="description">
+            Offers good for a limited time at "Slice of Blue" located at California State University, San Bernardino!
+            Prices may vary. Not valid with any other coupons or discounts. All beverage related trademarks are
+            registered Trademarks of PepsiCo, Inc. Some offers
+            require the purchase of multiple pizzas. Some offers may be available online only. Certain toppings may be
+            excluded from special offer pizzas or require additional charge. Limited delivery area. Delivery fee may
+            apply and may not be subject
+            to discount. Customer responsible for all applicable taxes.
         </div>
     </footer>
 </body>
