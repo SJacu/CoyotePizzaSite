@@ -1,7 +1,7 @@
 .info {
     min-height: 50vh;
     padding: 15px;
-    justify-content: space-evenly;
+    
 }
 
 #signupform,
@@ -13,13 +13,27 @@
     text-align: left;
 }
 
+#total,
+#email,
+#cardPayment,
+#phone,
+#bAddress{
+    position:absolute;
+    margin-top: -18%;
+    font-size: 17px;
+    text-align: start;
+    width: 40%;
+    margin-left: 12%;
+    line-height: 105px;
+
+}
 #edit{
     font-size: 15px;
     width:10%;
     color:white;
     padding:7px;
-    margin-left: 45%;
-    margin-top: 60%;
+    margin-left: 65%;
+    margin-top: 55%;
     border-radius: 40px;
     background: rgb(38, 108, 212);
     text-align: center;
