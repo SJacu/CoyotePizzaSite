@@ -1,0 +1,72 @@
+/*Navbar*/
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+ul {
+    list-style-type: none;
+    height: 10vh;
+}
+
+li {
+    padding-left: 30px;
+}
+
+#menu {
+    margin-left: -20px;
+}
+
+#logo {
+    width: 130px;
+    height: 130px;
+    padding: 0;
+    margin-top: 60px;
+    border-radius: 50%;
+    position: relative;
+}
+
+#login,
+#logout {
+    margin: 0px 40px 0px auto;
+}
+
+#logout {
+    display: none;
+}
+
+
+/*Login/Sign Up Modal*/
+
+.loginSignup {
+    width: 200px;
+    height: 140px;
+    position: absolute;
+    right: 0px;
+    float: top;
+    padding-top: 10px;
+    display: none;
+    z-index: 100;
+}
+
+#loginmodalEmail,
+#loginmodalPassword {
+    height: 30px;
+    width: 180px;
+}
+
+#signup {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+#loginmodal {
+    padding-right: 20px;
+}
+
+#loginmodal,
+#signup {
+    display: inline;
+}

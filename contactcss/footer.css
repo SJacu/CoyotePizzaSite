@@ -1,0 +1,19 @@
+
+/*===Footer Code Start===*/
+/*General Information*/
+.generalInfo {
+    padding-top: 30px;
+    justify-content: space-evenly;
+}
+
+.ourCompanySection,
+.ourPizzaSection,
+.helpSection {
+    width: 250px;
+}
+
+/*Slice of Blue Description*/
+.description {
+    padding: 30px 60px 60px 60px;
+}
+/*===Footer Code End===*/
