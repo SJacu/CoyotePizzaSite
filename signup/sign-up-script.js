@@ -27,7 +27,6 @@ auth.onAuthStateChanged(user => {
     }else{
         //user is logged out
         console.log("There is no user logged in");
-        UserDisplay.textContent = "";
     }
 });
 
@@ -73,7 +72,16 @@ function Create_User(uID, useNam, email)
         username: useNam,
         email: email,
         dateJoined: date,
-        admin: false
+        admin: false,
+        points: 0,
+        cardNumber: "Not set yet.",
+        cardName: "Not set yet.",
+        cardExp: "Not set yet",
+        cardSec: "Not set yet",
+        Phone: "Not set yet.",
+        billAddress: "Not set yet.",
+        billCity: "Not set yet.",
+        billZip: "Not set yet."
     }).then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
         //clear input feilds from Sign_Up;
@@ -82,7 +90,6 @@ function Create_User(uID, useNam, email)
         signUpPasswordInput2.value = "";
         window.location.href = "../index.html";
         alert("Signed up Succesffuly");
-        
     }).catch((error) => {
         console.error("Error adding document: ", error);
     });
