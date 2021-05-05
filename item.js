@@ -23,6 +23,12 @@ var Menu = {
         itemPrice = parseFloat(this.itemPrice.value, 10);
         description = this.description.value;
         imgFileLocation = 'images/' + this.imgUploadButton.files[0].name;
+        /*
+        if (this.imgUploadButton.files[0].name.includes(".")) {
+            alert("invalid file name");
+            return;
+        }*/
+
 
         //Write menu item properties to Firestore
         itemRef.collection(itemType).doc(itemName).set({
@@ -62,7 +68,7 @@ var Menu = {
                                 .then((url) => {
                                     //Add HTML Element for each menu item w/ add button
                                     removeSpaces = doc.data().name.split(" ").join("");
-                                    className = removeSpaces.split(".").join("");
+                                    className = removeSpaces.split("()_-,").join("");
                                     menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"><img class="` + className + `" src="" alt="" height="200px" width="250px"></div><div class="basic-div flex-direction-column menuItem"><span>` +
                                         doc.data().name + " " + "$" +
                                         doc.data().price + " " +
@@ -95,7 +101,7 @@ var Menu = {
                                 storage.ref(doc.data().img).getDownloadURL()
                                     .then((url) => {
                                         removeSpaces = doc.data().name.split(" ").join("");
-                                        className = removeSpaces.split(".").join("");
+                                        className = removeSpaces.split("()_-,").join("");
                                         menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"><img class="` + className + `" src="" alt="" height="200px" width="250px"></div><div class="basic-div flex-direction-column menuItem"><span>` +
                                             doc.data().name + " " + "$" +
                                             doc.data().price + " " +
@@ -115,7 +121,7 @@ var Menu = {
                                 storage.ref(doc.data().img).getDownloadURL()
                                     .then((url) => {
                                         removeSpaces = doc.data().name.split(" ").join("");
-                                        className = removeSpaces.split(".").join("");
+                                        className = removeSpaces.split("()_-,").join("");
                                         menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"><img class="` + className + `" src="" alt="" height="200px" width="250px"></div><div class="basic-div flex-direction-column menuItem"><span>` +
                                             doc.data().name + " " + "$" +
                                             doc.data().price + " " +
