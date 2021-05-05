@@ -8,11 +8,12 @@ var Menu = {
     itemName: document.querySelector(".itemname"),
     itemPrice: document.querySelector(".itemprice"),
     description: document.querySelector(".description"),
+    imgUploadButton: document.querySelector("#imgUpload"),
     menuDisplay: document.querySelector(".menu"), //Most likley not needed
 
     addMenuItems: function() {
         //Write menu item properties to firestore
-        if (this.itemName.value == '' || this.itemPrice.value == '' || this.description.value == '') {
+        if (this.itemName.value == '' || this.itemPrice.value == '' || this.description.value == '' || this.imgUploadButton.files[0] == null) {
             alert('DO NOT LEAVE ANY FIELDS BLANK');
             return;
         }
@@ -21,13 +22,15 @@ var Menu = {
         itemType = this.itemType.value;
         itemPrice = parseFloat(this.itemPrice.value, 10);
         description = this.description.value;
+        imgFileLocation = 'images/' + this.imgUploadButton.files[0].name;
 
         //Write menu item properties to Firestore
         itemRef.collection(itemType).doc(itemName).set({
                 name: itemName,
                 price: itemPrice,
                 description: description,
-                type: itemType
+                type: itemType,
+                img: imgFileLocation
             })
             .then(() => {
                 console.log("Document successfully written!");
@@ -55,14 +58,24 @@ var Menu = {
                 itemRef.collection(itemtype).get()
                     .then((querySnapshot) => {
                         querySnapshot.forEach((doc) => {
-                            //Add HTML Element for each menu item w/ add button
-                            menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
-                                doc.data().name + " " + "$" +
-                                doc.data().price + " " +
-                                `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
-                                `</span>` +
-                                `<div>` + doc.data().description + `</div>` +
-                                `</div></div><br><br>`;
+                            storage.ref(doc.data().img).getDownloadURL()
+                                .then((url) => {
+                                    //Add HTML Element for each menu item w/ add button
+                                    removeSpaces = doc.data().name.split(" ").join("");
+                                    className = removeSpaces.split(".").join("");
+                                    menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"><img class="` + className + `" src="" alt="" height="200px" width="250px"></div><div class="basic-div flex-direction-column menuItem"><span>` +
+                                        doc.data().name + " " + "$" +
+                                        doc.data().price + " " +
+                                        `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
+                                        `</span>` +
+                                        `<div>` + doc.data().description + `</div>` +
+                                        `</div></div><br><br>`;
+                                    imgBox = document.querySelector('.' + className);
+                                    imgBox.setAttribute('src', url);
+                                })
+                                .catch((error) => {
+                                    console.log(error);
+                                });
                         });
                     })
             }
@@ -79,23 +92,46 @@ var Menu = {
                         querySnapshot.forEach((doc) => {
                             //Add HTML Element for each menu item w/ add button
                             if (admin) {
-                                menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
-                                    doc.data().name + " " + "$" +
-                                    doc.data().price + " " +
-                                    `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
-                                    `<br><button type="button" class="itemButton" onclick="Menu.removeMenuItem('` + doc.data().name + `', '` + doc.data().type + `')">REMOVE ITEM</button>` +
-                                    `</span>` +
-                                    `<div>` + doc.data().description + `</div>` +
-                                    `</div></div><br><br>`;
+                                storage.ref(doc.data().img).getDownloadURL()
+                                    .then((url) => {
+                                        removeSpaces = doc.data().name.split(" ").join("");
+                                        className = removeSpaces.split(".").join("");
+                                        menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"><img class="` + className + `" src="" alt="" height="200px" width="250px"></div><div class="basic-div flex-direction-column menuItem"><span>` +
+                                            doc.data().name + " " + "$" +
+                                            doc.data().price + " " +
+                                            `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
+                                            `<br><button type="button" class="itemButton" onclick="Menu.removeMenuItem('` + doc.data().name + `', '` + doc.data().type + `')">REMOVE ITEM</button>` +
+                                            `</span>` +
+                                            `<div>` + doc.data().description + `</div>` +
+                                            `</div></div><br><br>`;
+
+                                        imgBox = document.querySelector('.' + className);
+                                        imgBox.setAttribute('src', url);
+                                    })
+                                    .catch((error) => {
+                                        console.log(error);
+                                    });
                             } else {
-                                menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"></div><div class="basic-div flex-direction-column menuItem"><span>` +
-                                    doc.data().name + " " + "$" +
-                                    doc.data().price + " " +
-                                    `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
-                                    `</span>` +
-                                    `<div>` + doc.data().description + `</div>` +
-                                    `</div></div><br><br>`;
+                                storage.ref(doc.data().img).getDownloadURL()
+                                    .then((url) => {
+                                        removeSpaces = doc.data().name.split(" ").join("");
+                                        className = removeSpaces.split(".").join("");
+                                        menuDisplay.innerHTML += `<div class="menuBox"><div class="boxes basic-div border-solid"><img class="` + className + `" src="" alt="" height="200px" width="250px"></div><div class="basic-div flex-direction-column menuItem"><span>` +
+                                            doc.data().name + " " + "$" +
+                                            doc.data().price + " " +
+                                            `<button type="button" class="itemButton" onclick="Cart.addItemToCart('` + doc.data().name + `', '` + doc.data().type + `')">&nbsp;+&nbsp;</button>` +
+                                            `</span>` +
+                                            `<div>` + doc.data().description + `</div>` +
+                                            `</div></div><br><br>`;
+                                        imgBox = document.querySelector('.' + className);
+                                        imgBox.setAttribute('src', url);
+                                    })
+                                    .catch((error) => {
+                                        console.log(error);
+                                    });
+
                             }
+
                         });
                     })
             }
@@ -116,7 +152,10 @@ var Menu = {
 //window.onload = Menu.getAllMenuItems();
 
 //Get the correct menu when the page loads
-window.onload = updateSpecificMenu(window.location.href);
+//window.onload = updateSpecificMenu(window.location.href);
+document.addEventListener("DOMContentLoaded", () => {
+    updateSpecificMenu(window.location.href);
+});
 
 function updateSpecificMenu(menuType) {
     //Find which menu the user is currently looking at
@@ -144,4 +183,14 @@ function updateSpecificMenu(menuType) {
         console.log("You're on the Sides Page");
         console.log(menuType);
     }
+}
+
+var imgUploadButton = document.querySelector("#imgUpload");
+if (imgUploadButton) {
+    imgUploadButton.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        var storageRef = storage.ref('images/' + file.name);
+        storageRef.put(file);
+        console.log(imgUploadButton.files[0].name);
+    });
 }

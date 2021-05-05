@@ -15,6 +15,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
     <!-- needed to use firebase firestore -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <!-- needed to use firebase authentication -->
@@ -25,7 +26,7 @@
             apiKey: "AIzaSyB8tIbgsUbKFCdcLJke3uAHnPHQoco16mY",
             authDomain: "sliceofblue-d8622.firebaseapp.com",
             projectId: "sliceofblue-d8622",
-            storageBucket: "sliceofblue-d8622.appspot.com",
+            storageBucket: "gs://sliceofblue-d8622.appspot.com",
             messagingSenderId: "924075037117",
             appId: "1:924075037117:web:890ec08ecd299d459182d4",
             measurementId: "G-LCBLS25DNQ"
@@ -35,6 +36,7 @@
         firebase.analytics();
         const db = firebase.firestore(); //used to initialize our database object we'll be refering to
         const auth = firebase.auth(); //initializes our authorization sdk
+        const storage = firebase.storage();
     </script>
     <!--!!!!!!!END OF FIREBASE HEADER!!!!!!!-->
 

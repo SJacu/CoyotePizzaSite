@@ -38,6 +38,7 @@
     margin: 50px auto 50px auto;
     height: 200px;
     min-width: 250px;
+    overflow: hidden;
 }
 
 .menuPizza,
