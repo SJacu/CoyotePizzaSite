@@ -9,6 +9,7 @@
     width: 600px;
     min-height: 70vh;
     margin: 20px;
+    padding-top: 40px;
 }
 
 #payment {
@@ -46,8 +47,9 @@
 
 #paymentinfo {
     margin-left: 10%;
-    height: 65vh;
     align-items: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #cardName,
