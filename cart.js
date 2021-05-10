@@ -53,18 +53,24 @@ function updateCart(userID) {
                                 console.log(doc.data());
                                 //Insert HTML element displaying current Cart data
                                 itemInCart += `<span>` +
-                                    doc.data().itemname + " " +
+                                    doc.data().itemname + " $" +
                                     doc.data().price + " " +
                                     doc.data().quantity +
                                     `<span>` + " " +
                                     `<button type="button" class="itemButton" onclick="Cart.removeItemFromCart('` + doc.data().itemname + `')">&nbsp;-&nbsp;</button>` +
                                     `<br><br>`
                                 cartDisplay.innerHTML = itemInCart;
-                            } else {
+                            }
+                        })
+                    });
+                userRef.doc(userDocID).collection("Cart")
+                    .onSnapshot((querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                            if (doc.id == 'Total') {
                                 //Insert HTML element displaying current Total
                                 totalAmount = doc.data().total;
                                 if (totalAmount <= 0)
-                                    totalAmount = 0
+                                    totalAmount = 0;
 
                                 cartDisplay.innerHTML += `<div class="total"><span class="totalPrice">` +
                                     `Total: $` + totalAmount.toFixed(2) + `</span></div>`;
@@ -90,7 +96,7 @@ function updateCart(userID) {
                                 //Insert HTML element displaying current Total
                                 totalAmount = doc.data().total;
                                 if (totalAmount <= 0)
-                                    totalAmount = 0
+                                    totalAmount = 0;
 
                                 orderCompleteTotal.innerHTML = `Total: $` + totalAmount.toFixed(2) + `</span></div>`;
                             }
